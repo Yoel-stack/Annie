@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-backgroundTwo: var(--backgroundTwo);
+  --color-backgroundTree: var(--backgroundTree);
+  --color-foreground: var(--foreground);
+  --color-textPrimary: var(--text);
+  --color-textSecondary: var(--textTwo);
+  --font-quicksand: var(--quicksand);
+  --fontTitle-quicksand: var(--quicksandTitle);
+}
+
+:root {
+  --background: #FCC6BB;
+  --foreground: #FAA08E; 
+  --text: #000000;
+  --textTwo: #;
+  --backgroundTwo:#FEEAE7;
+  --backgroundTree:#FDDBD1;
+  /* --hover: ; */
+}
+
+body {  
+  color: var(--text);
+  background: 
+  linear-gradient(
+    to bottom, 
+    rgba(250, 160, 142, 0.7), 
+    rgba(250, 160, 142, 0.5)    
+  ), 
+  url('/fondoflores.jpeg');
+  background-size: 200px;  
+  background-repeat: repeat; 
+  background-position: center; 
+}
