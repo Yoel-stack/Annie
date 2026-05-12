@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { GoHeart } from "react-icons/go";
 import React from 'react'
 
 export const TopMenu = () => {
@@ -64,6 +65,24 @@ export const TopMenu = () => {
             </div>
           </Link>
         ))}
+<Link href={'/liked'}>
+        <div className="group relative">
+    <nav className='cursor-pointer py-3 px-6 
+      bg-backgroundTree 
+      text-[#F07C65]
+      rounded-t-2xl 
+      transition-all duration-300 ease-out
+      shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)]
+      
+      group-hover:translate-y-[-5px]
+      group-hover:bg-backgroundTwo
+      group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)]
+      
+      focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 focus:ring-offset-2'>
+      <GoHeart />
+    </nav>
+  </div>
+      </Link>
       </div>
     </nav>
   );

@@ -1,5 +1,7 @@
 export * from './article/article-details/ArticleDetails';
 
+export * from './likedarticles/LikedArticles';
+
 export * from './article/SwiperSlide';
 
 export * from './articles/AtriclesGrid';
