@@ -3,7 +3,7 @@ import { AtriclesGridItem } from './AtriclesGridItem';
 import { Article } from '@/src/interfaces';
 
 
-interface Props {
+interface Props { 
   articles: Article[];
 };
 

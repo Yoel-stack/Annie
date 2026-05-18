@@ -1,19 +1,18 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import { GoHeart } from "react-icons/go";
-import React from 'react'
+import React from "react";
 
 export const TopMenu = () => {
-
   const categories = [
     { label: "Agendas", href: "/category/agendas" },
     { label: "Planners", href: "/category/planners" },
     { label: "Cuadernos", href: "/category/cuadernos" },
     { label: "Varios", href: "/category/varios" },
-  { label: "Encuadernaciones", href: "/category/encuadernaciones" },
-];
+    { label: "Encuadernaciones", href: "/category/encuadernaciones" },
+  ];
 
   return (
     <nav className="top-0 left-0 w-full bg-foreground shadow-xl pt-7 px-10">
@@ -30,7 +29,7 @@ export const TopMenu = () => {
         </div>
         <div className="">
           <Image
-            src="/annieLogo.png"
+            src="/annieTransparent.webp"
             width={150}
             height={100}
             alt="Annie Logo"
@@ -65,9 +64,11 @@ export const TopMenu = () => {
             </div>
           </Link>
         ))}
-<Link href={'/liked'}>
-        <div className="group relative">
-    <nav className='cursor-pointer py-3 px-6 
+
+        <Link href={"/liked"}>
+          <div className="group relative">
+            <nav
+              className="cursor-pointer py-3 px-6 
       bg-backgroundTree 
       text-[#F07C65]
       rounded-t-2xl 
@@ -78,11 +79,12 @@ export const TopMenu = () => {
       group-hover:bg-backgroundTwo
       group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)]
       
-      focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 focus:ring-offset-2'>
-      <GoHeart />
-    </nav>
-  </div>
-      </Link>
+      focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 focus:ring-offset-2"
+            >
+              <GoHeart />
+            </nav>
+          </div>
+        </Link>
       </div>
     </nav>
   );
