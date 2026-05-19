@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import { IoTrashBinOutline } from "react-icons/io5";
 
 interface Article {
   title: string;
@@ -44,12 +45,12 @@ export default function LikedArticles() {
           key={item.slug}
           className="flex items-center gap-4 p-4 rounded-2xl shadow-sm border bg-[#FFF0ED] border-[#F3E5E2] hover:shadow-xl transition-shadow duration-300"
         >
-          <div className="relative w-20 h-20 bg-white border border-[#F3E5E2]">
+          <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden rounded-xl bg-white border border-[#F3E5E2]">
             <Image
               src={`/articles/${item.images[0]}`}
               alt={item.title}
               fill
-              className="object-cover rounded-xl"
+              className="object-cover"
             />
           </div>
 
@@ -64,6 +65,17 @@ export default function LikedArticles() {
               </p>
             )}
           </div>
+          <div className='flex items-center justify-center'>
+
+          <button
+        // onClick={() => handleDelete(item.slug)}
+        className="cursor-pointer p-2 rounded-xl text-[#A39389] hover:text-[#E06A55] hover:bg-[#FBE3DF] transition-colors duration-200"
+        title="Eliminar de favoritos"
+        aria-label="Eliminar de favoritos"
+        >
+        <IoTrashBinOutline size={17} />
+      </button>
+        </div>
         </div>
       ))}
     </div>
