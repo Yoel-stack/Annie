@@ -30,6 +30,17 @@ export default function LikedArticles() {
     }
   }, []);
 
+  const handleDelete = (slug: string) => {
+  // 1. Filtramos el artículo que queremos borrar
+  const updatedFavorites = favorites.filter(item => item.slug !== slug);
+  
+  // 2. Actualizamos el estado para impactar la UI
+  setFavorites(updatedFavorites);
+  
+  // 3. Lo guardamos en el localStorage convertido a string
+  localStorage.setItem("annie-likes", JSON.stringify(updatedFavorites));
+};
+
   if (favorites.length === 0) {
     return (
       <div className="py-20 text-center text-[#8C7E74] font-light">
@@ -55,7 +66,7 @@ export default function LikedArticles() {
           </div>
 
           {/* Contenedor de la información al costado derecho */}
-          <div className="flex flex-col justify-center min-w-0">
+          <div className="flex flex-col justify-center min-w-0 flex-1">
             <h3 className="text-[#4A4540] font-medium text-base truncate mb-1">
               {item.title}
             </h3>
@@ -68,7 +79,7 @@ export default function LikedArticles() {
           <div className='flex items-center justify-center'>
 
           <button
-        // onClick={() => handleDelete(item.slug)}
+        onClick={() => handleDelete(item.slug)}
         className="cursor-pointer p-2 rounded-xl text-[#A39389] hover:text-[#E06A55] hover:bg-[#FBE3DF] transition-colors duration-200"
         title="Eliminar de favoritos"
         aria-label="Eliminar de favoritos"

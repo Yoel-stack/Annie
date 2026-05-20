@@ -13,10 +13,9 @@ interface Props {
 export default function ArticleDetails({ article }: Props) {
 
   const handleLike = () => {
-    // 1. Obtenemos lo que ya existe en favoritos
+
     const savedLikes = JSON.parse(localStorage.getItem("annie-likes") || "[]");
 
-    // 2. Verificamos si ya existe para no duplicar
     const exists = savedLikes.some(
       (item: Article) => item.slug === article.slug,
     );

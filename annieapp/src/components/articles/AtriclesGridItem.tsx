@@ -43,7 +43,7 @@ export const AtriclesGridItem = ({ article }:Props ) => {
             {`$${article.price}`}
           </span>
 
-          <button className="px-4 py-1.5 bg-[#FCC6BB] text-[#7A4A43] text-xs font-bold uppercase tracking-wider cursor-pointer rounded-full hover:bg-[#FAA08E] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+          <button className="px-4 py-1.5 bg-[#FCC6BB] text-[#7A4A43] text-xs font-bold uppercase tracking-wider cursor-pointer rounded-xl hover:bg-[#FAA08E] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
             Ver detalles
           </button>
         </Link>
