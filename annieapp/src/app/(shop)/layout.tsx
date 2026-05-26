@@ -10,10 +10,16 @@ export default function ShopLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main>
-      <TopMenu />
-      <div>{children}</div>
-      <Footer />
-    </main>
+    <main className="layout-container">
+  <TopMenu />
+  
+  <div className="content-grow">
+    {children}
+  </div>
+  
+  <footer>
+    <Footer />
+  </footer>
+</main>
   );
 };

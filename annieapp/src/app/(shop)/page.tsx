@@ -1,7 +1,4 @@
-import { AtriclesGrid, Title } from "@/src/components";
-import { initialData } from "@/src/seed";
-
-const articles = initialData.articles;
+import { Title } from "@/src/components";
 
 
 export default function Home() {
@@ -9,10 +6,7 @@ export default function Home() {
     <>
       <div className="mt-7">
         <div className="flex justify-center uppercase text-lg font-bold text-[#4A4540]">
-          <Title title="Todos los articulos" subtitle=""/>
-        </div>
-        <div className="p-3">
-          <AtriclesGrid articles={articles} />
+          <Title title="INICIO" subtitle=""/>
         </div>
       </div>
     </>

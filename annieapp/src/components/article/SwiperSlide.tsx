@@ -24,8 +24,8 @@ export const SwiperS = ({ images, title }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null); 
 
   return (
-    <div className='flex flex-row h-[60vh] min-h-[600px] w-full'>
-      <div className='w-[80%]'>
+    <div className='flex flex-row gap-4 w-full h-[450px]'>
+      <div className='w-[80%] h-full overflow-hidden rounded-lg'>
 
       <Swiper
         spaceBetween={5}
@@ -35,38 +35,39 @@ export const SwiperS = ({ images, title }: Props) => {
         className="mySwiper2"
       >
         {images.map((images) => (
-          <SwiperSlide key={images} className='p-1'>
+          <SwiperSlide key={images} className='w-full h-full flex justify-center items-center'>
             <Image
-              width={200}
-              height={200}
+              width={1000}
+              height={1000}
+              quality={100}
               src={`/articles/${images}`}
               alt={title}
-              className="rounded"
+              className="rounded w-full h-full object-cover"
             />
           </SwiperSlide>
         ))}
       </Swiper>
       </div>
-      <div className=''>
+      <div className='w-[20%] h-full overflow-hidden'>
 
       <Swiper
         onSwiper={setThumbsSwiper}
         direction="vertical"
-        spaceBetween={5}
-        slidesPerView={4}
+        spaceBetween={2}
+        slidesPerView={7}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
         >
         {images.map((images) => (
-          <SwiperSlide key={images} className='p-1'>
+          <SwiperSlide key={images} className='w-full h-full rounded-md overflow-hidden'>
             <Image
-              width={200}
-              height={200}
+              width={300}
+              height={300}
               src={`/articles/${images}`}
               alt={title}
-              className="rounded cursor-pointer border hover:border-gray-400 transition-all"
+              className="rounded cursor-pointer border hover:border-gray-400 transition-all object-cover"
               />
           </SwiperSlide>
         ))}

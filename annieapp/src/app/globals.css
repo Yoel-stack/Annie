@@ -29,8 +29,18 @@ body {
     rgba(250, 160, 142, 0.7), 
     rgba(250, 160, 142, 0.5)    
   ), 
-  url('/fondoFlores.webp');
+  url('/fondoflores2.jpeg');
   background-size: 200px;  
   background-repeat: repeat; 
   background-position: center; 
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa el alto total de la pantalla */
+}
+
+.content-grow {
+  flex: 1; /* Estira el div y empuja el footer hacia abajo */
 }
