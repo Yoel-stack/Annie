@@ -24,11 +24,11 @@ export const SwiperS = ({ images, title }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null); 
 
   return (
-    <div className='flex flex-row gap-4 w-full h-[450px]'>
-      <div className='w-[80%] h-full overflow-hidden rounded-lg'>
+    <div className='flex flex-row gap-2 sm:gap-4 w-full h-[280px] sm:h-[400px] md:h-[450px]'>
+      <div className='w-[75%] sm:w-[78%] md:w-[80%] h-full overflow-hidden rounded-lg'>
 
       <Swiper
-        spaceBetween={5}
+        spaceBetween={2}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
@@ -48,12 +48,12 @@ export const SwiperS = ({ images, title }: Props) => {
         ))}
       </Swiper>
       </div>
-      <div className='w-[20%] h-full overflow-hidden'>
+      <div className='w-[17%] sm:w-[22%] md:w-[20%] h-full overflow-hidden'>
 
       <Swiper
         onSwiper={setThumbsSwiper}
         direction="vertical"
-        spaceBetween={2}
+        spaceBetween={1}
         slidesPerView={7}
         freeMode={true}
         watchSlidesProgress={true}

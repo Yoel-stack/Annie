@@ -12,11 +12,16 @@ export const TopMenu = () => {
     { label: "Cuadernos", href: "/category/cuadernos" },
     { label: "Varios", href: "/category/varios" },
     { label: "Encuadernaciones", href: "/category/encuadernaciones" },
+    { label: "Otros", href: "/category/otros" },
+    { label: "Regalitos", href: "/category/regalitos" },
+    { label: "Lapiceras", href: "/category/lapiceras" },
+    { label: "Blocks", href: "/category/blocks" },
+    { label: "Utiles", href: "/category/utiles" },
   ];
 
   return (
     <>
-      <nav className="top-0 left-0 w-full bg-foreground shadow-xl pt-5 px-10">
+      <nav className="sticky z-10 top-0 left-0 w-full bg-foreground shadow-xl pt-5 px-10">
         {/* Contenedor del Título 'Annie' */}
         <div className="flex items-center justify-between pb-4 md:pb-0 gap-2">
           <div className="hidden md:flex md:items-center gap-2">
@@ -44,7 +49,7 @@ export const TopMenu = () => {
           
           
         </div>
-        <nav className="fixed top-9 right-6 z-50 flex  gap-3">
+        <nav className="fixed top-9 right-6 z-50 flex gap-3">
 
           <Link
             href={"/liked"}
@@ -132,7 +137,7 @@ export const TopMenu = () => {
         </div>
       </nav>
 
-      <div className="md:hidden fixed bottom-20 top-25 right-0 z-50 flex flex-col -space-y-4.5 pointer-events-none max-h-[calc(100vh-100px)] overflow-y-auto no-scrollbar">
+      <div className="md:hidden fixed top-24 mr-0.5 right-0 z-50 flex flex-col -space-y-1.5 pointer-events-none max-h-[calc(108vh-140px)] overflow-y-auto no-scrollbar">
         {/* El resto de tu código con el .map() se mantiene EXACTAMENTE igual */}
         {categories.map((cat) => (
           <Link
@@ -141,9 +146,9 @@ export const TopMenu = () => {
             className="group pointer-events-auto"
           >
             <div className="
-            py-4 px-2
+            py-2 px-2
             bg-backgroundTree
-            rounded-l-xl 
+            rounded-r-xl 
             
             border-black/30
             border-y border-black/5
@@ -158,7 +163,7 @@ export const TopMenu = () => {
                 className="
                 text-[#F07C65] 
                 font-semibold 
-                text-xs
+                text-[8px]
                 tracking-[0.15em]
                 uppercase
                 [writing-mode:vertical-lr]

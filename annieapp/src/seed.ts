@@ -9,7 +9,7 @@ interface SeedArticles {
 };
 
 
-type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios';
+type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios'|'otros'|'blocks'|'utiles'|'regalitos'|'lapiceras';
 type ValidTypes = 'utiles escolares'|'sin personalizar'|'agendas personalizadas'|'cuadernos personalizados'|'planners personalizados'|'encuadernaciones personalizadas'; 
 
 interface SeedData {

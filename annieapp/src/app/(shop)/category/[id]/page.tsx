@@ -21,10 +21,15 @@ export default async function catergoryPage({params}: Props){
         planners: "planners",
         cuadernos: "cuadernos",
         encuadernaciones: "encuadernaciones",
+        otros: "otros",
+        regalitos: "regalitos",
+        lapiceras: "lapiceras",
+        utiles: "utiles",
+        blocks: "blocks",
     } 
     return (
       <>
-        <div className="mt-7">
+        <div className="">
           <div className="flex justify-center uppercase text-lg font-semibold text-[#4A4540]">
             <Title title={`${idS[id]}`} subtitle="" className="" />
           </div>

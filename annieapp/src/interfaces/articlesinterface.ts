@@ -9,5 +9,5 @@ export interface Article {
 };
 
 
-export type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios';
+export type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios'|'otros'|'blocks'|'utiles'|'regalitos'|'lapiceras';
 export type ValidTypes = 'utiles escolares'|'sin personalizar'|'agendas personalizadas'|'cuadernos personalizados'|'planners personalizados'|'encuadernaciones personalizadas'; 
