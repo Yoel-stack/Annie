@@ -1,7 +1,8 @@
 
 import React from 'react'
 import Footer from '@/src/components/ui/footer/Footer';
-import {TopMenu} from '@/src/components/ui/top-menu/TopMenu';
+import { TopMenu } from '@/src/components';
+import AdvertisingBar from '@/src/components/ui/advertising/AdvertisingBar';
 
 
 export default function ShopLayout({
@@ -11,15 +12,14 @@ export default function ShopLayout({
 }>) {
   return (
     <main className="layout-container">
-  <TopMenu />
-  
-  <div className="content-grow">
-    {children}
-  </div>
-  
-  <footer>
-    <Footer />
-  </footer>
-</main>
+      <AdvertisingBar />
+      <TopMenu />
+
+      <div className="content-grow">{children}</div>
+
+      <footer>
+        <Footer />
+      </footer>
+    </main>
   );
 };

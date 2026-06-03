@@ -9,7 +9,35 @@
   --color-textSecondary: var(--textTwo);
   --font-quicksand: var(--quicksand);
   --fontTitle-quicksand: var(--quicksandTitle);
-}
+};
+
+@layer utilities {
+  /* Ocultar barra de scroll para Chrome, Safari y Opera */
+  .ocultar-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ocultar barra de scroll para IE, Edge y Firefox */
+  .ocultar-scroll {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+};
+
+@keyframes correrTexto {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.3333%);
+  }
+};
+
+.marquesina-continua {
+  display: flex;
+  width: max-content;
+  animation: correrTexto 20s linear infinite;
+};
 
 :root {
   --background: #FCC6BB;
@@ -19,7 +47,7 @@
   --backgroundTwo:#FEEAE7;
   --backgroundTree:#FDDBD1;
   /* --hover: ; */
-}
+};
 
 body {  
   color: var(--text);
@@ -33,14 +61,20 @@ body {
   background-size: 200px;  
   background-repeat: repeat; 
   background-position: center; 
-}
+};
 
 .layout-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ocupa el alto total de la pantalla */
-}
+  min-height: 100vh; 
+};
+
+.pestaña-redonda-abajo {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden; 
+};
 
 .content-grow {
-  flex: 1; /* Estira el div y empuja el footer hacia abajo */
-}
+  flex: 1;
+};

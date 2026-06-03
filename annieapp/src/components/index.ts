@@ -11,7 +11,9 @@ export * from './articles/AtriclesGridItem';
 
 export * from './searchbar/SearchBar';
 
-
+export * from './ui/advertising/AdvertisingBar';
 export * from './ui/title/Title';
+export * from './ui/banners/Banners';
 export * from './ui/top-menu/TopMenu';
+export * from './ui/top-menu/TopMenuMobile';
 export * from './ui/footer/Footer';
