@@ -79,7 +79,7 @@ export const TopMenu = () => {
                 href={cat.href}
                 className="group relative flex-shrink-0"
               >
-                <div className="py-2.5 mb-0.5 px-5.5 bg-backgroundTree text-sm leading-none rounded-t-2xl transition-all duration-300 ease-out 
+                <div className="py-2.5 mb-0.5 px-5.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
                 shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                 group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                 focus:ring-offset-2">
@@ -91,7 +91,7 @@ export const TopMenu = () => {
             <div className="sticky right-0 z-10 flex items-end flex-shrink-0 gap-0.5 pl-1 bg-foreground">
               <Link href={"/liked"}>
                 <div className="group relative">
-                  <div className="cursor-pointer px-4 p-3 bg-backgroundTree text-[#F07C65] rounded-t-2xl transition-all duration-300 
+                  <div className="cursor-pointer px-4 p-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
                   ease-out shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                   group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                   focus:ring-offset-2">
@@ -102,7 +102,7 @@ export const TopMenu = () => {
 
               <Link href={"/login"}>
                 <div className="group relative">
-                  <div className="cursor-pointer px-4 p-3 bg-backgroundTree text-[#F07C65] rounded-t-2xl transition-all duration-300 ease-out 
+                  <div className="cursor-pointer px-4 p-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 ease-out 
                   shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                   group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                   focus:ring-offset-2">

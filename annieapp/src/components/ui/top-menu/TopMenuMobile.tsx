@@ -31,7 +31,7 @@ export const TopMenuMobile = () => {
         <Link href={"/login"} className="text-white transition-colors">
           <GoPerson className="mt-1" size={24} />
         </Link>
-        <button onClick={abrirMenu}>
+        <button className="cursor-pointer" onClick={abrirMenu}>
           <GoListUnordered size={33} className="mx-1 text-white" />
         </button>
       </nav>

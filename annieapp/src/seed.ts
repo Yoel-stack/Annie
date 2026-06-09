@@ -15,14 +15,14 @@ type ValidTypes = 'utiles escolares'|'sin personalizar'|'agendas personalizadas'
 interface SeedData {
     articles: SeedArticles[],
 }
-
+    
 export const initialData: SeedData = {
     articles: [ 
         {
-            title: "Agenda",
+            title: "Agenda mas Cuadernito",
             description: "Agenda personal para anotar cositas, personalizada al estilo que ustedes decidan",
             images: [
-                'marmolArticles.png',
+                'agendaMasCuadernito.png',
                 'marmolArticles.png',
                 'marmolArticles.png',
                 'marmolArticles.png',
@@ -36,15 +36,15 @@ export const initialData: SeedData = {
             price: 300,
         },
         {
-            title: "Agenda",
-            description: "Agenda personal para anotar cositas, personalizada al estilo que ustedes decidan",
+            title: "Mooving Notes",
+            description: "Mooving notes de color verde y elastico rosa, trae letras, emogis y frases para que puedas personalizar con tu estilo cada apunte",
             images: [
-                'marmolArticles.png',
-                'marmolArticles.png',
-                'marmolArticles.png',
-                'marmolArticles.png',
-                'marmolArticles.png',
-                'marmolArticles.png',
+                'mooving.jpeg',
+                'mooving5.jpeg',
+                'mooving2.jpeg',
+                'mooving3.jpeg',
+                'mooving4.jpeg',
+                'mooving1.jpeg',
                 'marmolArticles.png',
             ],
             slug: "agenda_marmol2",
@@ -52,18 +52,18 @@ export const initialData: SeedData = {
             gender: "agendas",
             price: 300,
         },
-        {
-            title: "Agenda de Independiente",
-            description: "Agenda personal para anotar cosas, personalizada al estilo que ustedes decidan en este caso de Independiente",
-            images: [
-                'agendaCai.png',
-                'agendaprueba2.jpeg',
-            ],
-            slug: "agenda_cai_1",
-            type: 'agendas personalizadas',
-            gender: "agendas",
-            price: 300,
-        },
+        // {
+        //     title: "Agenda de Independiente",
+        //     description: "Agenda personal para anotar cosas, personalizada al estilo que ustedes decidan en este caso de Independiente",
+        //     images: [
+        //         'agendaCai.png',
+        //         'agendaprueba2.jpeg',
+        //     ],
+        //     slug: "agenda_cai_1",
+        //     type: 'agendas personalizadas',
+        //     gender: "agendas",
+        //     price: 300,
+        // },
         {
             title: "Agenda de Independiente",
             description: "Agenda personal para anotar cosas, personalizada al estilo que ustedes decidan en este caso de Independiente",
@@ -74,6 +74,29 @@ export const initialData: SeedData = {
             slug: "agenda_cai_2",
             type: 'agendas personalizadas',
             gender: "agendas",
+            price: 300,
+        },
+        {
+            title: "Lapicera mas mini cuaderno",
+            description: "Combo de lapicera mas cuaderno con renglones",
+            images: [
+                'lapiceraMasMiniCuaderno.png',
+                'agendaprueba2.jpeg',
+            ],
+            slug: "lapicera_mas_cuaderno",
+            type: 'utiles escolares',
+            gender: "varios",
+            price: 320,
+        },
+        {
+            title: "Cartuchera Campus",
+            description: "Cartuchera Campus color rosa",
+            images: [
+                'varios7.jpeg',
+            ],
+            slug: "cartuchera_campus",
+            type: 'utiles escolares',
+            gender: "varios",
             price: 300,
         },
         {
@@ -135,29 +158,6 @@ export const initialData: SeedData = {
             type: 'sin personalizar',
             gender: "varios",
             price: 200,
-        },
-        {
-            title: "Lapicera mas mini cuaderno",
-            description: "Combo de lapicera mas cuaderno con renglones",
-            images: [
-                'varios6.png',
-                'agendaprueba2.jpeg',
-            ],
-            slug: "lapicera_mas_cuaderno",
-            type: 'utiles escolares',
-            gender: "varios",
-            price: 320,
-        },
-        {
-            title: "Cartuchera Campus",
-            description: "Cartuchera Campus color rosa",
-            images: [
-                'varios7.jpeg',
-            ],
-            slug: "cartuchera_campus",
-            type: 'utiles escolares',
-            gender: "varios",
-            price: 300,
         },
         // {
         //     title: "Agenda con moños",
