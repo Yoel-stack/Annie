@@ -27,7 +27,8 @@ export default function Banners() {
           <Link
             key={section.id}
             href={section.href}
-            className="group relative block w-full h-[150px] md:h-[240px] rounded-[35px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 ease-out"
+            className="group relative block w-full h-[150px] md:h-[240px] rounded-[35px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] 
+            hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 ease-out"
           >
             <div className="grid grid-cols-2 w-full h-full">
               {/* Mitad Izquierda */}
@@ -54,7 +55,8 @@ export default function Banners() {
             </div>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 text-center w-full px-4 pointer-events-none">
-              <div className="inline-block bg-backgroundTree text-[#F07C65] px-5 py-1.5 rounded-full font-semibold text-xs md:text-base shadow-md transform transition-transform duration-300 ease-out group-hover:scale-105">
+              <div className="inline-block bg-backgroundTree text-[#F07C65] px-5 py-1.5 rounded-full font-semibold text-xs md:text-base shadow-md 
+              transform transition-transform duration-300 ease-out group-hover:scale-105">
                 <span className="uppercase tracking-[0.12em] whitespace-nowrap">
                   {section.title}
                 </span>

@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoTrashBinOutline } from "react-icons/io5";
+
 
 interface Article {
   title: string;
@@ -10,7 +11,7 @@ interface Article {
   images: string[];
   price?: number;
   description?: string;
-}
+};
 
 
 export default function LikedArticles() {
@@ -31,13 +32,10 @@ export default function LikedArticles() {
   }, []);
 
   const handleDelete = (slug: string) => {
-  // 1. Filtramos el artículo que queremos borrar
   const updatedFavorites = favorites.filter(item => item.slug !== slug);
   
-  // 2. Actualizamos el estado para impactar la UI
   setFavorites(updatedFavorites);
   
-  // 3. Lo guardamos en el localStorage convertido a string
   localStorage.setItem("annie-likes", JSON.stringify(updatedFavorites));
 };
 
@@ -65,7 +63,6 @@ export default function LikedArticles() {
             />
           </div>
 
-          {/* Contenedor de la información al costado derecho */}
           <div className="flex flex-col justify-center min-w-0 flex-1">
             <h3 className="text-[#4A4540] font-medium text-base truncate mb-1">
               {item.title}

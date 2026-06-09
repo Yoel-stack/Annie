@@ -1,5 +1,3 @@
-/* 
-
 .swiper-slide img {
     display: block;
     width: 100%;
@@ -12,7 +10,7 @@
 }
 
 .swiper {
-    width: 90%;
+    width: 100%; 
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -23,69 +21,21 @@
     background-position: center;
 }
 
-.mySwiper {
-    height: 100%;
-    width: 70%;
-    box-sizing: border-box;
-} 
 
-.mySwiper2{
-    --swiper-navigation-color: #fff;
-    --swiper-pagination-color: #fff;
-    --swiper-navigation-size: 35px;
-}
-
-.mySwiper .swiper-slide {
-    width: 80%;
-    height: 100%;
-    opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-}
- */
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}  
-
-.navigation{
-    color: white;
-}
-
-.swiper {
-    width: 100%; /* Subimos a 100% para aprovechar el ancho del contenedor de Tailwind */
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-slide {
-    background-size: cover;
-    background-position: center;
-}
-
-/* --- CONFIGURACIÓN RESPONSIVA DE LAS MINIATURAS --- */
-
-/* 1. Móviles (sm): Las miniaturas ocupan casi todo el ancho disponible de su columna */
 .mySwiper {
     height: 100%;
     width: 95%; 
     box-sizing: border-box;
 }
 
-/* 2. Tablets / Notebooks medianas (md) */
+
 @media (min-width: 768px) {
     .mySwiper {
         width: 85%;
     }
 }
 
-/* 3. Pantallas Grandes (lg) -> Volvemos a tu 70% original */
+
 @media (min-width: 1024px) {
     .mySwiper {
         width: 70%;
@@ -95,10 +45,10 @@
 .mySwiper2{
     --swiper-navigation-color: #fff;
     --swiper-pagination-color: #fff;
-    --swiper-navigation-size: 25px; /* Reducido un poco para que no tape la foto en móvil */
+    --swiper-navigation-size: 25px; 
 }
 
-/* En md y lg aumentamos el tamaño de las flechas */
+
 @media (min-width: 768px) {
     .mySwiper2 {
         --swiper-navigation-size: 35px;
@@ -106,7 +56,6 @@
 }
 
 .mySwiper .swiper-slide {
-    width: 100%; /* Cambiado a 100% para que no intente encogerse horizontalmente */
     height: 100%;
     opacity: 0.4;
     transition: opacity 0.2s ease;
