@@ -29,8 +29,8 @@ export default async function catergoryPage({params}: Props){
     } 
     return (
       <>
-        <div className="">
-          <div className="flex justify-center uppercase text-lg font-semibold text-[#4A4540]">
+        <div className="mt-8">
+          <div className="flex mt-4 text-sm sm:text-base justify-center uppercase font-bold text-[#7A4A43]">
             <Title title={`${idS[id]}`} subtitle="" className="" />
           </div>
           <div className="p-3">

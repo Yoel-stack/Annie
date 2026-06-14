@@ -21,8 +21,8 @@ const bannerSections = [
 
 export default function Banners() {
   return (
-    <div>
-      <div className="grid sm:grid-cols-2 w-full mx-auto mt-4 px-4 mb-12 gap-6">
+    <div className="mt-8">
+      <div className="grid sm:grid-cols-2 w-full mx-auto px-4 mb-12 gap-6">
         {bannerSections.map((section) => (
           <Link
             key={section.id}
@@ -67,4 +67,4 @@ export default function Banners() {
       </div>
     </div>
   );
-}
+};

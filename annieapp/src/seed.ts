@@ -92,7 +92,7 @@ export const initialData: SeedData = {
             title: "Cartuchera Campus",
             description: "Cartuchera Campus color rosa",
             images: [
-                'varios7.jpeg',
+                'varios7.png',
             ],
             slug: "cartuchera_campus",
             type: 'utiles escolares',
