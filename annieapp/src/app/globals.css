@@ -11,19 +11,7 @@
   --fontTitle-quicksand: var(--quicksandTitle);
 };
 
-@layer utilities {
-  /* Ocultar barra de scroll para Chrome, Safari y Opera */
-  .ocultar-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Ocultar barra de scroll para IE, Edge y Firefox */
-  .ocultar-scroll {
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-};
-
+  
 @keyframes correrTexto {
   0% {
     transform: translateX(0%);
@@ -78,3 +66,4 @@ body {
 .content-grow {
   flex: 1;
 };
+

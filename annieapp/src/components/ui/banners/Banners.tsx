@@ -15,14 +15,14 @@ const bannerSections = [
     title: "Varios",
     href: "/banner/bannerTwo",
     imgLeft: "/bannerImgFour.png",
-    imgRight: "/articles/agendaCai2.png",
+    imgRight: "/bannerImgTree.jpeg",
   },
 ];
 
 export default function Banners() {
   return (
-    <div className="mt-8">
-      <div className="grid sm:grid-cols-2 w-full mx-auto px-4 mb-12 gap-6">
+    <div className="mt-3 sm:mt-8">
+      <div className="grid sm:grid-cols-2 w-full mx-auto px-4 mb-6 sm:mb-12 gap-2 sm:gap-6">
         {bannerSections.map((section) => (
           <Link
             key={section.id}

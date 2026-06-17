@@ -16,16 +16,14 @@ export default async function catergoryPage({params}: Props){
     const articles = categoryArticles.filter((article) => article.gender === id);
 
     const idS = {
-        varios: "variedad de articulos",
         agendas: "agendas", 
-        planners: "planners",
         cuadernos: "cuadernos",
+        planners: "planners",
         encuadernaciones: "encuadernaciones",
+        varios: "variedad de articulos",
         otros: "otros",
-        regalitos: "regalitos",
-        lapiceras: "lapiceras",
-        utiles: "utiles",
-        blocks: "blocks",
+        programasEBI: "programas de EBI",
+        libretitas: "libretitas",
     } 
     return (
       <>

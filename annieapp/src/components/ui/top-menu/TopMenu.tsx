@@ -14,14 +14,13 @@ export const TopMenu = () => {
     { label: "Planners", href: "/category/planners" },
     { label: "Cuadernos", href: "/category/cuadernos" },
     { label: "Varios", href: "/category/varios" },
+    { label: "Libretitas", href: "/category/libretitas" },
     { label: "Encuadernaciones", href: "/category/encuadernaciones" },
+    { label: "Programas de EBI", href: "/category/programasEBI" },
     { label: "Otros", href: "/category/otros" },
-    { label: "Regalitos", href: "/category/regalitos" },
-    { label: "Lapiceras", href: "/category/lapiceras" },
-    { label: "Blocks", href: "/category/blocks" },
-    { label: "Utiles", href: "/category/utiles" },
   ];
 
+   {/* SCROLL LEFT */}
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (direction: "left" | "right") => {
@@ -58,12 +57,12 @@ export const TopMenu = () => {
             />
           </div>
         </div>
-
+        {/* SCROLL LEFT POR LAS DUDAS */}
         <div className="relative group/container w-full">
           <button
             onClick={() => handleScroll("left")}
-            className="absolute -left-8 top-12.5 -translate-y-1/2 z-20 bg-white/40 hover:bg-white text-[#F07C65] p-1 rounded-lg 
-            shadow-md transition-all md:flex hidden border border-gray-100"
+            className="hidden md:flex lg:hidden absolute -left-8 top-12.5 -translate-y-1/2 z-20 bg-white/40 hover:bg-white text-[#F07C65] p-1 rounded-lg 
+            shadow-md transition-all border border-gray-100"
             aria-label="Scroll left"
           >
             <GoChevronLeft size={13} />
@@ -71,7 +70,7 @@ export const TopMenu = () => {
 
           <div
             ref={scrollContainerRef}
-            className="flex ml-6.5 ocultar-scroll hidden md:flex pt-6 relative justify-start items-end overflow-x-auto whitespace-nowrap justify-start w-full gap-0.5"
+            className="flex lg:ml-1 md:ml-7 hidden md:flex pt-6 relative justify-start items-end overflow-x-auto whitespace-nowrap justify-start w-full gap-0.5"
           >
             {categories.map((cat) => (
               <Link
@@ -79,7 +78,7 @@ export const TopMenu = () => {
                 href={cat.href}
                 className="group relative flex-shrink-0"
               >
-                <div className="py-2.5 mb-0.5 px-5.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
+                <div className="py-2.5 mb-0.5 px-7.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
                 shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                 group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                 focus:ring-offset-2">
@@ -112,10 +111,11 @@ export const TopMenu = () => {
               </Link>
             </div>
           </div>
+
+          {/* SCROLL RIGHT POR LAS DUDAS */}
           <button
             onClick={() => handleScroll("right")}
-            className="absolute -left-1 top-12.5 -translate-y-1/2 z-20 bg-white/40 hover:bg-white text-[#F07C65] p-1 rounded-lg shadow-md transition-all md:flex 
-            hidden border border-gray-100"
+            className="hidden md:flex lg:hidden absolute -left-1 top-12.5 -translate-y-1/2 z-20 bg-white/40 hover:bg-white text-[#F07C65] p-1 rounded-lg shadow-md transition-all border border-gray-100"
             aria-label="Scroll right"
           >
             <GoChevronRight size={13} />
