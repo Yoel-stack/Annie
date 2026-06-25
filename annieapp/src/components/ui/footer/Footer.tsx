@@ -9,7 +9,7 @@ export default function Footer () {
           <h2 className="text-white text-xl font-medium tracking-tight leading-none">
             Annie
           </h2>
-          <p className="text-white/80 text-[10px] uppercase tracking-[0.2em] mt-1">
+          <p className="text-white/80 text-[8px] sm:text-[10px] uppercase tracking-[0.2em] mt-1">
             Papelería Creativa
           </p>
         </div>

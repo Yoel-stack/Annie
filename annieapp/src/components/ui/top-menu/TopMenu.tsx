@@ -48,16 +48,18 @@ export const TopMenu = () => {
           </div>
 
           <div>
+            <Link href={'/'}>
             <Image
               src="/annieTransparent.webp"
               width={150}
               height={100}
               alt="Annie Logo"
-              className="object-contain w-[130px] md:w-[150px]"
-            />
+              className="object-contain w-[110px] md:w-[150px]"
+              />
+            </Link>
           </div>
         </div>
-        {/* SCROLL LEFT POR LAS DUDAS */}
+        {/* SCROLL LEFT */}
         <div className="relative group/container w-full">
           <button
             onClick={() => handleScroll("left")}
@@ -112,7 +114,7 @@ export const TopMenu = () => {
             </div>
           </div>
 
-          {/* SCROLL RIGHT POR LAS DUDAS */}
+          {/* SCROLL RIGHT */}
           <button
             onClick={() => handleScroll("right")}
             className="hidden md:flex lg:hidden absolute -left-1 top-12.5 -translate-y-1/2 z-20 bg-white/40 hover:bg-white text-[#F07C65] p-1 rounded-lg shadow-md transition-all border border-gray-100"
