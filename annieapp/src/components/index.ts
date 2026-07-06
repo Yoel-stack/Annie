@@ -7,6 +7,8 @@ export * from './article/SwiperSlide';
 export * from './articles/AtriclesGrid';
 export * from './articles/AtriclesGridItem';
 
+export * from './clerk/ClerkAppearance';
+
 export * from './searchbar/SearchBar';
 
 export * from './ui/advertising/AdvertisingBar';

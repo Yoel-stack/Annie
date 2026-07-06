@@ -31,7 +31,7 @@ export const AtriclesGridItem = ({ article }: Props) => {
         <Link
           className="flex flex-col no-underline text-center mb-1 text-[#4A4540] hover:text-[#57524C]"
           href={`/article/${article.slug}`}
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           <span className="text-xs sm:text-sm text-[#3A3632] font-bold line-clamp-2 min-h-[32px] sm:min-h-[40px]">
@@ -41,7 +41,7 @@ export const AtriclesGridItem = ({ article }: Props) => {
 
         <Link
           href={`/article/${article.slug}`}
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
           className="group flex flex-row items-center justify-between w-full shadow-[0_-6px_10px_-4px_rgba(122,74,67,0.4)] rounded-xl px-1 pt-1.5 no-underline"
         >

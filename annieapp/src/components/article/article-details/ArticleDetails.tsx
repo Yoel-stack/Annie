@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { SwiperS } from '@/src/components/article/SwiperSlide';
 import { Article } from '@/src/interfaces';
+import { RedirectToSignIn, useUser } from "@clerk/nextjs";
 
 
 interface Props { 
@@ -11,31 +12,45 @@ interface Props {
 
 
 export default function ArticleDetails({ article }: Props) {
+  
+  const { isLoaded, isSignedIn } = useUser(); // Obtenemos el estado de autenticación
+  const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const [isLiked, setIsLiked] = useState(false);
-  const [toast, setToast] = useState({ mensaje: "", visible: false });
-
-
+  const [toast, setToast] = useState({ mensaje: "", visible: false })
+  
   useEffect(() => {
-    const saveData = localStorage.getItem("annie-likes"); //annie-likes es una base de datos local se podria llamar
-
-    if (saveData) {
-      try {
-        const favorites: Article[] = JSON.parse(saveData);
-        const existe = favorites.some((item) => item.slug === article.slug);
-        setIsLiked(existe);
-      } catch (error) {
-        console.error("Error al leer favoritos:", error);
+    // Solo leemos el localStorage si Clerk ya cargó y el usuario está logueado
+    if (isLoaded && isSignedIn) {
+      const saveData = localStorage.getItem("annie-likes");
+      if (saveData) {
+        try {
+          const favorites: Article[] = JSON.parse(saveData);
+          const existe = favorites.some((item) => item.slug === article.slug);
+          setIsLiked(existe);
+        } catch (error) {
+          console.error("Error al leer favoritos:", error);
+        }
       }
+    } else {
+      // Si el usuario cierra sesión, nos aseguramos de resetear el estado visual del botón
+      setIsLiked(false);
     }
-  }, [article.slug]);
+  }, [article.slug, isLoaded, isSignedIn]);
 
   const handleLike = () => {
+    if (!isSignedIn) {
+      setShouldRedirect(true);
+      return;
+    }
+
+    // Si llegó aquí, significa que SÍ está logueado
     const newState = !isLiked;
     setIsLiked(newState);
 
     const savedData = localStorage.getItem("annie-likes");
     let favorites: Article[] = savedData ? JSON.parse(savedData) : [];
+
     if (newState === true) {
       favorites.push(article);
       triggerToast("Añadido a tus favoritos");
@@ -43,17 +58,20 @@ export default function ArticleDetails({ article }: Props) {
       favorites = favorites.filter((item) => item.slug !== article.slug);
       triggerToast("Quitado de favoritos");
     }
-    localStorage.setItem("annie-likes", JSON.stringify(favorites)); //guarda texto plano
+    localStorage.setItem("annie-likes", JSON.stringify(favorites));
+  };
+
+  if (shouldRedirect) {
+    return <RedirectToSignIn />;
   };
 
   const triggerToast = (mensaje: string) => {
     setToast({ mensaje, visible: true });
-
     setTimeout(() => {
       setToast((prev) => ({ ...prev, visible: false }));
     }, 3000);
   };
-  
+
   return (
     <div className="pt-3 px-4 md:px-8 w-full max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -86,10 +104,10 @@ export default function ArticleDetails({ article }: Props) {
           <div className="mt-6 sm:mt-10">
             <button
               onClick={handleLike}
+              disabled={!isLoaded}
               aria-label="Agregar a favoritos"
               className="w-full sm:w-auto text-center cursor-pointer px-6 py-3 bg-[#FCC6BB] text-[#7A4A43] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl hover:bg-[#FAA08E] hover:text-white transition-all duration-300 shadow-sm "
             >
-              
               {isLiked ? "Quitar" : "Me encanta"}
             </button>
             {toast.visible && (

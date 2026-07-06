@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react'
 import { useUIStore } from '@/src/store'
-import { GoHeart, GoInfo, GoMegaphone, GoReply, GoSignIn, GoTag } from 'react-icons/go';
+import { GoHeart, GoInfo, GoMegaphone, GoPerson, GoReply, GoSignIn, GoTag } from 'react-icons/go';
 import clsx from "clsx";
 import Link from 'next/link';
+import { Show, SignInButton, UserButton } from '@clerk/nextjs';
 
 
 export default function Sidebar() {
@@ -56,13 +57,21 @@ export default function Sidebar() {
         </div>
 
         <div className="mt-14 flex flex-col gap-5">
-          <Link
-            href={"/login"}
-            className="flex text-white transition-colors items-center ml-1"
-          >
-            <GoSignIn className="" size={24} />
-            <span className="ml-2">Ingresar</span>
-          </Link>
+
+            <Show when="signed-out">
+              <SignInButton mode="modal">
+                <button type="button" className="flex items-center ml-1 text-white">
+                  <GoPerson size={24} />
+                  <span className="ml-2">Ingresar</span>
+                </button>
+              </SignInButton>
+            </Show>
+            <Show when="signed-in">
+              <div className="flex items-center ml-1 text-white">
+                <UserButton />
+                <span className="ml-2">Perfil</span>
+              </div>
+            </Show>
 
           <div>
             <nav
@@ -82,7 +91,9 @@ export default function Sidebar() {
                       className="flex items-center p-1 text-decoration-none hover rounded transition-all"
                       onClick={closeSideMenu}
                     >
-                      <span className="px-1 ml-2 text-sm shadow-sm rounded-sm text-gray-300">{cat.label}</span>
+                      <span className="px-1 ml-2 text-sm shadow-sm rounded-sm text-gray-300">
+                        {cat.label}
+                      </span>
                     </Link>
                   ))}
                 </div>
