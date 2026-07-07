@@ -45,7 +45,7 @@ export const AtriclesGridItem = ({ article }: Props) => {
           rel="noopener noreferrer"
           className="group flex flex-row items-center justify-between w-full shadow-[0_-6px_10px_-4px_rgba(122,74,67,0.4)] rounded-xl px-1 pt-1.5 no-underline"
         >
-          <span className="text-sm sm:text-xl font-medium text-black whitespace-nowrap sm:ml-4">
+          <span className="text-sm sm:text-xl font-medium text-gray-800 whitespace-nowrap ml-1 sm:ml-4">
             {`$${article.price}`}
           </span>
 

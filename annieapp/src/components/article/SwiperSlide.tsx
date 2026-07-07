@@ -42,7 +42,7 @@ export const SwiperS = ({ images, title }: Props) => {
                 <Image
                   width={1000}
                   height={1000}
-                  quality={100}
+                  // quality={100}
                   src={`/articles/${images}`}
                   alt={title}
                   className="rounded w-full h-full object-cover"

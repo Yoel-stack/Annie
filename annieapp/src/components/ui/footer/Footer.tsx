@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Footer () {
   return (
-    <footer className="w-full shadow-[0_-20px_25px_-5px_rgba(0,0,0,0.1),0_-8px_10px_-6px_rgba(0,0,0,0.1)] bg-foreground py-5 mt-20">
+    <footer className="w-full shadow-[0_-20px_25px_-5px_rgba(0,0,0,0.1),0_-8px_10px_-6px_rgba(0,0,0,0.1)] bg-foreground py-5 mt-10">
       <div className="max-w-7xl mx-auto px-8 flex flex-row items-center justify-between">
         <div className="flex flex-col">
           <h2 className="text-white text-xl font-medium tracking-tight leading-none">
@@ -21,7 +21,7 @@ export default function Footer () {
       </div>
     </footer>
   );
-} 
+};
 
 
 

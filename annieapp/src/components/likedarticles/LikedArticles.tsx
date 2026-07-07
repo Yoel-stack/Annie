@@ -92,7 +92,7 @@ export default function LikedArticles() {
               </h3>
             </Link>
             {item.price && (
-              <p className="text-black text-base">${item.price}</p>
+              <p className="text-gray-800 text-base">${item.price}</p>
             )}
           </div>
           <div className="flex items-center justify-center">

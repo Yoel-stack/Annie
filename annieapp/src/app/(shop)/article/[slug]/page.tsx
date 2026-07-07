@@ -20,7 +20,7 @@ export default function ArticlePage({ params }: Props) {
   }
 
   return (
-    <div className="mx-4 mb-10 mt-10">
+    <div className="mx-4 mt-10">
       <ArticleDetails article={article} />
     </div>
   );

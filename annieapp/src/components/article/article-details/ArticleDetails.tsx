@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { SwiperS } from '@/src/components/article/SwiperSlide';
 import { Article } from '@/src/interfaces';
-import { RedirectToSignIn, useUser } from "@clerk/nextjs";
+import { RedirectToSignIn, useClerk, useUser } from "@clerk/nextjs";
 
 
 interface Props { 
@@ -14,7 +14,9 @@ interface Props {
 export default function ArticleDetails({ article }: Props) {
   
   const { isLoaded, isSignedIn } = useUser(); // Obtenemos el estado de autenticación
-  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [shouldRedirect] = useState(false);
+
+  const { openSignIn } = useClerk();
 
   const [isLiked, setIsLiked] = useState(false);
   const [toast, setToast] = useState({ mensaje: "", visible: false })
@@ -40,7 +42,7 @@ export default function ArticleDetails({ article }: Props) {
 
   const handleLike = () => {
     if (!isSignedIn) {
-      setShouldRedirect(true);
+      openSignIn();
       return;
     }
 
@@ -90,7 +92,7 @@ export default function ArticleDetails({ article }: Props) {
           <div className="w-full border-t border-gray-100 my-4" />
 
           {article.price && (
-            <p className="text-gray-700 text-2xl sm:text-3xl font-medium">
+            <p className="text-gray-800 text-2xl sm:text-3xl font-medium">
               ${article.price}
             </p>
           )}

@@ -41,10 +41,10 @@ export const TopMenu = () => {
         <nav className="sticky z-20 top-0 left-0 w-full bg-foreground shadow-xl pt-11 px-10">
           <div className="flex items-center justify-between pb-4 md:pb-0 gap-2">
             <div className="hidden md:flex md:items-center gap-2">
-              <Link href={"/"} className="text-4xl text-white tracking-light">
+              <Link href={"/"} className="mt-2 text-4xl text-white tracking-light">
                 Annie
               </Link>
-              <span className="mt-2.5 mx-1 text-xs uppercase text-white tracking-[0.2em]">
+              <span className="mt-5 mx-1 text-xs uppercase text-white tracking-[0.2em]">
                 Papelería creativa
               </span>
             </div>

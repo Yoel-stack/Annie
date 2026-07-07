@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { quickFont, quickFontTitle } from "../config/fonts";
 import { ClerkProvider } from '@clerk/nextjs'
 import { esES } from "@clerk/localizations";
-import "./globals.css";
 import { clerkTheme } from "../components/clerk/ClerkAppearance";
+import "./globals.css";
   
   
 export const metadata: Metadata = {
