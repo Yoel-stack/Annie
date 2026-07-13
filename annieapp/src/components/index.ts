@@ -4,8 +4,8 @@ export * from './likedarticles/LikedArticles';
 
 export * from './article/SwiperSlide';
 
-export * from './articles/AtriclesGrid';
-export * from './articles/AtriclesGridItem';
+export * from './articles/ArticlesGrid';
+export * from './articles/ArticlesGridItem';
 
 export * from './clerk/ClerkAppearance';
 

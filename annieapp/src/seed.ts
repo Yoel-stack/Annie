@@ -6,6 +6,7 @@ interface SeedArticles {
     type: ValidTypes;
     gender: ValidCatergories;
     price: number; 
+    varios: boolean;
 };
 
 
@@ -34,6 +35,7 @@ export const initialData: SeedData = {
             type: 'utiles escolares',
             gender: "varios",
             price: 300,
+            varios: false,
         },
         {
             title: "Mooving Notes",
@@ -51,6 +53,7 @@ export const initialData: SeedData = {
             type: 'cuadernos personalizados',
             gender: "cuadernos",
             price: 300,
+            varios: true,
         },
         {
             title: "Cuaderno de entrenamiento 📓​",
@@ -68,6 +71,7 @@ export const initialData: SeedData = {
             type: 'cuadernos personalizados',
             gender: "cuadernos",
             price: 300,
+            varios: true,
         },
         {
             title: "Libro de Memorias",
@@ -85,6 +89,7 @@ export const initialData: SeedData = {
             type: 'cuadernos personalizados',
             gender: "cuadernos",
             price: 300,
+            varios: true,
         },
         {
             title: "Cuaderno Magnolia 🌸",
@@ -102,6 +107,25 @@ export const initialData: SeedData = {
             type: 'cuadernos personalizados',
             gender: "cuadernos",
             price: 300,
+            varios: false,
+        },
+        {
+            title: "Cuaderno Dia del Padre",
+            description: "¡Tus apuntes merecen un espacio especial! Este cuaderno personalizado es ideal para organizar tu dia a dia, estudiar o plasmar tus mejores ideas. Con una tapa con fotos y dedicatoria personalizada!",
+            images: [
+                'cuadernodp.jpeg',
+                'cuadernodp6.jpeg',
+                'cuadernodp4.jpeg',
+                'cuadernodp2.jpeg',
+                'cuadernodp5.jpeg',
+                'cuadernodp3.jpeg',
+                'cuadernodp1.jpeg',
+            ],
+            slug: "cuaderno_dia_del_padre",
+            type: 'cuadernos personalizados',
+            gender: "cuadernos",
+            price: 450,
+            varios: true,
         },
         {
             title: "Recetario 📖",
@@ -119,6 +143,7 @@ export const initialData: SeedData = {
             type: 'cuadernos personalizados',
             gender: "cuadernos",
             price: 300,
+            varios: false,
         },
         {
             title: "Cartuchera Campus",
@@ -133,6 +158,7 @@ export const initialData: SeedData = {
             type: 'utiles escolares',
             gender: "varios",
             price: 300,
+            varios: true,
         },
         {
             title: "Programa Educación Básica Integrada",
@@ -150,6 +176,7 @@ export const initialData: SeedData = {
             type: 'encuadernaciones personalizadas',
             gender: "programasEBI",
             price: 650,
+            varios: true,
         },
         {
             title: "Lapicera mas mini cuaderno",
@@ -162,6 +189,7 @@ export const initialData: SeedData = {
             type: 'utiles escolares',
             gender: "varios",
             price: 320,
+            varios: false,
         },
         {
             title: "Agenda con paisaje",
@@ -174,6 +202,7 @@ export const initialData: SeedData = {
             type: 'agendas personalizadas',
             gender: "agendas",
             price: 300,
+            varios: true,
         },
         {
             title: "Agenda con flor amarilla",
@@ -186,6 +215,7 @@ export const initialData: SeedData = {
             type: 'agendas personalizadas',
             gender: "agendas",
             price: 300,
+            varios: false,
         },
         {
             title: "Agenda con atardecer",
@@ -198,6 +228,7 @@ export const initialData: SeedData = {
             type: 'agendas personalizadas',
             gender: "agendas",
             price: 300,
+            varios: false,
         },
         {
             title: "Blocks de apuntes",
@@ -210,6 +241,7 @@ export const initialData: SeedData = {
             type: 'utiles escolares',
             gender: "varios",
             price: 200,
+            varios: false,
         },
         {
             title: "Perfumes",
@@ -222,6 +254,7 @@ export const initialData: SeedData = {
             type: 'sin personalizar',
             gender: "varios",
             price: 200,
+            varios: false,
         },
         // {
         //     title: "Agenda con moños",
@@ -261,6 +294,7 @@ export const initialData: SeedData = {
             type: 'planners personalizados',
             gender: "planners",
             price: 300,
+            varios: false,
         },
         {
             title: "Planner con fondito",
@@ -272,6 +306,7 @@ export const initialData: SeedData = {
             type: 'planners personalizados',
             gender: "planners",
             price: 300,
+            varios: false,
         },
         {
             title: "Planner con moños",
@@ -283,6 +318,7 @@ export const initialData: SeedData = {
             type: 'planners personalizados',
             gender: "planners",
             price: 300,
+            varios: false,
         },
         {
             title: "Planner floreado",
@@ -294,6 +330,7 @@ export const initialData: SeedData = {
             type: 'planners personalizados',
             gender: "planners",
             price: 300,
+            varios: false,
         },
         {
             title: "Planner animal print",
@@ -306,35 +343,31 @@ export const initialData: SeedData = {
             type: 'planners personalizados',
             gender: "planners",
             price: 300,
+            varios: false,
         },
             {
             title: "Encuadernacion",
             description: "Encuadernacion",
             images: [
-                'agendaedit.jpeg',
                 'agendaArcSN.png',
-                'agendaArcoiris.png',
-                'agendaArcoiris2.png',
-
             ],
             slug: "agenda21",
             type: 'sin personalizar',
             gender: "encuadernaciones",
             price: 300,
+            varios: false,
         },
         {
             title: "Lapiceras",
             description: "Lapiceras",
             images: [
-                'agenda1.webp',
-                'agenda11.webp',
-                'agenda11.webp',
                 'agenda11.webp',
             ],
             slug: "lapiceras1",
             type: 'utiles escolares',
             gender: "varios",
             price: 300,
+            varios: false,
         },
     ]
 };

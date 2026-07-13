@@ -5,9 +5,11 @@ import { initialData } from "@/src/seed";
 import { notFound } from "next/navigation";
 import ArticleDetails from "@/src/components/article/article-details/ArticleDetails";
 
+
 interface Props {
   params: Promise<{ slug: string }>; // Definimos params como una Promesa
 }
+
 
 export default function ArticlePage({ params }: Props) {
   const resolvedParams = use(params);
@@ -23,5 +25,5 @@ export default function ArticlePage({ params }: Props) {
     <div className="mx-4 mt-10">
       <ArticleDetails article={article} />
     </div>
-  );
-}
+  )
+};

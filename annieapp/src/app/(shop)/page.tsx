@@ -1,5 +1,5 @@
-import { AtriclesGrid, Title } from "@/src/components";
 import Banners from "@/src/components/ui/banners/Banners";
+import { ArticlesGrid, Title } from "@/src/components";
 import { initialData } from "@/src/seed";
 
 const articles = initialData.articles
@@ -16,13 +16,13 @@ export default function Home() {
           <Banners />
         </div>
 
-        <div className="mt-3">
+        <div className="mt-4 sm:mt-8">
           <nav className="flex justify-center uppercase text-sm sm:text-base font-bold text-[#7A4A43]">
             <Title title="" subtitle="Todos los articulos" />
           </nav>
 
-          <nav className="mt-4 px-4">
-            <AtriclesGrid articles={articles} />
+          <nav className="mt-2 sm:mt-4 px-4">
+            <ArticlesGrid articles={articles} />
           </nav>
         </div>
       </div>

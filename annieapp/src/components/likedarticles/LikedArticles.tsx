@@ -50,7 +50,7 @@ export default function LikedArticles() {
     return (
       <div className="py-20 text-sm sm:text-[17px] text-center text-[#8C7E74]">
         Por favor, inicia sesión haciendo clic en el icono de usuario arriba
-        para ver tus favoritos.
+        para ver tus favoritos
       </div>
     );
   };
@@ -64,13 +64,13 @@ export default function LikedArticles() {
   if (favorites.length === 0) {
     return (
       <div className="py-20 text-sm sm:text-[17px] text-center text-[#8C7E74]">
-        Aún no tienes artículos guardados en tu lista.
+        Aún no tienes artículos guardados en tu lista
       </div>
     );
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-2">
       {favorites.map((item) => (
         <div
           key={item.slug}

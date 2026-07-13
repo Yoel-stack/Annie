@@ -6,6 +6,7 @@ export interface Article {
     type: ValidTypes;
     gender: ValidCatergories;
     price: number;
+    varios: boolean;
 };
 
 

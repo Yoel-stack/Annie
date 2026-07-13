@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+
 const bannerSections = [
   {
     id: 1,
@@ -12,7 +13,7 @@ const bannerSections = [
   },
   {
     id: 2,
-    title: "Varios",
+    title: "Articulos seleccionados",
     href: "/banner/bannerTwo",
     imgLeft: "/bannerImgFour.png",
     imgRight: "/bannerImgTree.jpeg",

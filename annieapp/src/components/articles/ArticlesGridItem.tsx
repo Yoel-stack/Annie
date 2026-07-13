@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Article } from "@/src/interfaces";
 
+
 interface Props {
   article: Article;
 };
 
 
-export const AtriclesGridItem = ({ article }: Props) => {
+export const ArticlesGridItem = ({ article }: Props) => {
   const artImage = article.images;
 
   return (

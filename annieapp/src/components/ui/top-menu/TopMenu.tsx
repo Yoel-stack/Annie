@@ -1,15 +1,19 @@
 'use client';
-
-
+  
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import { GoChevronLeft, GoChevronRight, GoHeart, GoPerson } from "react-icons/go";
 import { ClerkProvider, Show, SignInButton, UserButton } from '@clerk/nextjs'
 import { TopMenuMobile } from "./TopMenuMobile";
+import { usePathname } from "next/navigation";
 
 
 export const TopMenu = () => {
+
+  const pathname = usePathname();
+
+
   const categories = [
     { label: "Agendas", href: "/category/agendas" },
     { label: "Planners", href: "/category/planners" },
@@ -41,7 +45,10 @@ export const TopMenu = () => {
         <nav className="sticky z-20 top-0 left-0 w-full bg-foreground shadow-xl pt-11 px-10">
           <div className="flex items-center justify-between pb-4 md:pb-0 gap-2">
             <div className="hidden md:flex md:items-center gap-2">
-              <Link href={"/"} className="mt-2 text-4xl text-white tracking-light">
+              <Link
+                href={"/"}
+                className="mt-2 text-4xl text-white tracking-light"
+              >
                 Annie
               </Link>
               <span className="mt-5 mx-1 text-xs uppercase text-white tracking-[0.2em]">
@@ -76,22 +83,33 @@ export const TopMenu = () => {
               ref={scrollContainerRef}
               className="flex lg:ml-1 md:ml-7 hidden md:flex pt-6 relative justify-start items-end overflow-x-auto whitespace-nowrap justify-start w-full gap-0.5"
             >
-              {categories.map((cat) => (
-                <Link
-                  key={cat.href}
-                  href={cat.href}
-                  className="group relative flex-shrink-0"
-                >
-                  <div
-                    className="py-2.5 mb-0.5 px-7.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
-                shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
-                group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
-                focus:ring-offset-2"
+              {categories.map((shadow) => {
+                const isActive = pathname === shadow.href;
+                return (
+                  <Link
+                    key={shadow.label}
+                    href={shadow.href}
+                    className={`
+                                      group relative flex-shrink-0
+                                            ${
+                                              isActive
+                                                ? "border-b-3 border-b-[#F07C65]"
+                                                : "hover:border-b-foreground"
+                                            }
+                                              `}
+                    aria-current={isActive ? "page" : undefined}
                   >
-                    <span className="text-[#F07C65]">{cat.label}</span>
-                  </div>
-                </Link>
-              ))}
+                    <div
+                      className="py-2.5 px-7.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
+                    shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
+                    group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
+                    focus:ring-offset-2"
+                    >
+                      <span className="text-[#F07C65]">{shadow.label}</span>
+                    </div>
+                  </Link>
+                );
+              })}
 
               <div className="sticky right-0 z-10 flex items-end flex-shrink-0 gap-0.5 pl-1 bg-foreground">
                 <Link href={"/liked"}>
