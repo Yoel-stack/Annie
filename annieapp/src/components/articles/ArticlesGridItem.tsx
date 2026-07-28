@@ -44,13 +44,13 @@ export const ArticlesGridItem = ({ article }: Props) => {
           href={`/article/${article.slug}`}
           // target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-row items-center justify-between w-full shadow-[0_-6px_10px_-4px_rgba(122,74,67,0.4)] rounded-xl px-1 pt-1.5 no-underline"
+          className="group flex flex-row items-center justify-between w-full shadow-[0_-6px_10px_-4px_rgba(122,74,67,0.4)] rounded-xl px-2 pt-1.5 no-underline"
         >
-          <span className="text-sm sm:text-xl font-medium text-gray-800 whitespace-nowrap ml-1 sm:ml-4">
+          <span className="text-sm sm:text-xl font-medium text-gray-800 whitespace-nowrap ml-1 sm:ml-1">
             {`$${article.price}`}
           </span>
 
-          <button className="p-1 sm:p-1 mx-1 sm:mr-4 px-1 sm:px-2.5 bg-[#FCC6BB] text-[#7A4A43] text-[9px] sm:text-xs 
+          <button className="p-1 sm:p-1 mx-1 sm:mr-1 px-1 sm:px-2.5 bg-[#FBB4A5] text-[#7A4A43] text-[9px] sm:text-[11px] 
           font-bold uppercase tracking-wider cursor-pointer rounded-[8px] hover:bg-[#FAA08E] hover:text-white transition-all 
           duration-300 shadow-sm hover:shadow-md whitespace-nowrap">
             Ver detalles

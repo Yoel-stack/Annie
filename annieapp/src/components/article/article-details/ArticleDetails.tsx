@@ -108,7 +108,7 @@ export default function ArticleDetails({ article }: Props) {
               onClick={handleLike}
               disabled={!isLoaded}
               aria-label="Agregar a favoritos"
-              className="w-full sm:w-auto text-center cursor-pointer px-6 py-3 bg-[#FCC6BB] text-[#7A4A43] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl hover:bg-[#FAA08E] hover:text-white transition-all duration-300 shadow-sm "
+              className="w-full sm:w-auto text-center cursor-pointer px-6 py-3 bg-[#FBB4A5] text-[#7A4A43] text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl hover:bg-[#FAA08E] hover:text-white transition-all duration-300 shadow-sm "
             >
               {isLiked ? "Quitar" : "Me encanta"}
             </button>
