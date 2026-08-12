@@ -1,3 +1,5 @@
+export * from './helpers/transformArticle';
+
 export * from './article/article-details/ArticleDetails';
 
 export * from './likedarticles/LikedArticles';

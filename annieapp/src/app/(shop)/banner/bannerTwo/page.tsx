@@ -1,13 +1,21 @@
-import { Title } from '@/src/components'
+import { Title, transformArticle } from '@/src/components'
 import { SelectArticles } from '@/src/components/selectarticles/SelectArticles'
-import { initialData } from '@/src/seed'
+import { prisma } from '@/src/lib/prisma'
 import React from 'react'
 
 
-const articles = initialData.articles
 
 
-export default function selectArticles () {
+export default async function selectArticles () {
+
+  const selectArt = await prisma.article.findMany({
+    where: {
+      varios: true
+    }
+  })
+
+  const articles = selectArt.map(transformArticle);
+
   return (
     <div className="mt-4 sm:mt-8">
       <nav className="flex justify-center uppercase text-sm sm:text-base font-bold text-[#7A4A43]">

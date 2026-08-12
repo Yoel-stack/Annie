@@ -14,7 +14,7 @@ model Article {
   images      String[]
   slug        String   @unique
   type        String
-  category    String   // Mapea con el género/categoría de tu seed
+  gender      String   
   price       Float
   varios      Boolean  @default(false)
 

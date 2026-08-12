@@ -1,6 +1,6 @@
-import { ArticlesGrid, Title} from "@/src/components";
+import { ArticlesGrid, Title, transformArticle} from "@/src/components";
 import { ValidCatergories } from "@/src/interfaces/articlesinterface";
-import { initialData } from "@/src/seed";
+import { prisma } from "@/src/lib/prisma";
 
 
 interface Props {
@@ -9,13 +9,16 @@ interface Props {
   };
 };
 
-
-const categoryArticles = initialData.articles;
-
+  
 export default async function catergoryPage({params}: Props){
+  
+  const { id } = await params;
+  
+  const categoryArticles = await prisma.article.findMany({
+    where: { gender: id },
+  }); // Consulta a la base de datos para obtener los artículos de su respectiva categoria
 
-    const { id } = await params;
-    const articles = categoryArticles.filter((article) => article.gender === id);
+    const articles = categoryArticles.map(transformArticle); 
 
     const idS = {
         agendas: "agendas", 

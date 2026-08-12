@@ -1,11 +1,16 @@
 import Banners from "@/src/components/ui/banners/Banners";
-import { ArticlesGrid, Title } from "@/src/components";
-import { initialData } from "@/src/seed";
+import { ArticlesGrid, Title, transformArticle } from "@/src/components";
+import { Article } from "@/src/interfaces/articlesinterface";
+import { prisma } from "@/src/lib/prisma";
 
-const articles = initialData.articles
 
 
-export default function Home() {
+export default async function Home() {
+  
+    const rawArticles = await prisma.article.findMany();
+    //transformamos los datos crudos a nuestro tipo Article
+    const articles: Article[] = rawArticles.map((raw) => transformArticle(raw));
+    
   return (
     <>
       <div>

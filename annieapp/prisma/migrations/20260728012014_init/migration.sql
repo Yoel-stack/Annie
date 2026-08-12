@@ -6,7 +6,7 @@ CREATE TABLE "Article" (
     "images" TEXT[],
     "slug" TEXT NOT NULL,
     "type" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
+    "gender" TEXT NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
     "varios" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,

@@ -75,7 +75,7 @@ export default function ArticleDetails({ article }: Props) {
   };
 
   return (
-    <div className="pt-3 px-4 md:px-8 w-full max-w-6xl mx-auto">
+    <div className="mt-6 px-4 md:px-8 w-full max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div className="col-span-1 w-full max-w-[360px] sm:max-w-[450px] md:max-w-none mx-auto aspect-square max-h-[360px] sm:max-h-[450px] md:max-h-none overflow-hidden rounded-xl">
           <SwiperS title={article.title} images={article.images} />

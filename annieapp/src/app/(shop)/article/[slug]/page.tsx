@@ -1,9 +1,8 @@
-"use client";
-
-import React, { use } from "react";
-import { initialData } from "@/src/seed";
 import { notFound } from "next/navigation";
+import { prisma } from "@/src/lib/prisma";
 import ArticleDetails from "@/src/components/article/article-details/ArticleDetails";
+import { Article } from "@/src/interfaces/articlesinterface";
+import { transformArticle } from "@/src/components/helpers/transformArticle";
 
 
 interface Props {
@@ -11,19 +10,24 @@ interface Props {
 }
 
 
-export default function ArticlePage({ params }: Props) {
-  const resolvedParams = use(params);
-  const slug = resolvedParams.slug;
+export default async function ArticlePage({ params }: Props) {
+const { slug } = await params; // Esperamos a que la Promesa se resuelva para obtener el slug
 
-  const article = initialData.articles.find((p) => p.slug === slug);
+  // const article = initialData.articles.find((p) => p.slug === slug);
 
-  if (!article) {
+  const rawarticle = await prisma.article.findUnique({
+    where: { slug },
+  });
+
+  if (!rawarticle) {
     notFound();
   }
 
-  return (
-    <div className="mx-4 mt-10">
-      <ArticleDetails article={article} />
-    </div>
-  )
+  let article: Article;
+  try {
+    article = transformArticle(rawarticle); 
+  } catch {
+    return <div className="text-center text-red-600 py-10"> Error al cargar el articulo </div>;
+  }
+  return <ArticleDetails article={article} />
 };
