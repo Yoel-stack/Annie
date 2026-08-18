@@ -43,27 +43,27 @@ export const TopMenu = () => {
     <>
       <ClerkProvider>
         <nav className="sticky z-20 top-0 left-0 w-full bg-foreground shadow-xl pt-11 px-10">
-          <div className="flex items-center justify-between pb-4 md:pb-0 gap-2">
+          <div className="flex items-center justify-between md:pb-0 gap-2">
             <div className="hidden md:flex md:items-center gap-2">
               <Link
                 href={"/"}
-                className="mt-2 text-4xl text-white tracking-light"
+                className="mt-4 text-4xl text-white tracking-light"
               >
                 Annie
               </Link>
-              <span className="mt-5 mx-1 text-xs uppercase text-white tracking-[0.2em]">
+              <span className="mt-6 mx-1 text-xs uppercase text-white tracking-[0.2em]">
                 Papelería creativa
               </span>
             </div>
 
-            <div>
+            <div className = "mt-2">
               <Link href={"/"}>
                 <Image
                   src="/annieTransparent.webp"
                   width={150}
                   height={100}
                   alt="Annie Logo"
-                  className="object-contain w-[110px] md:w-[150px]"
+                  className="object-contain w-[110px] md:w-[120px]"
                 />
               </Link>
             </div>
