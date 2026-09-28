@@ -24,7 +24,7 @@
 .marquesina-continua {
   display: flex;
   width: max-content;
-  animation: correrTexto 20s linear infinite;
+  animation: correrTexto 50s linear infinite;
 };
 
 :root {

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useUIStore } from '@/src/store'
-import { GoHeart, GoInfo, GoMegaphone, GoPerson, GoReply, GoSignIn, GoTag } from 'react-icons/go';
+import { GoHeart, GoInfo, GoMegaphone, GoPerson, GoReply, GoTag } from 'react-icons/go';
 import clsx from "clsx";
 import Link from 'next/link';
 import { Show, SignInButton, UserButton } from '@clerk/nextjs';
@@ -41,7 +41,7 @@ export default function Sidebar() {
       )}
       <nav
         className={clsx(
-          "fixed p-5 rounded-sm right-0 top-0 w-[200px] sm:w-[300px] h-screen bg-[#7A4A43] z-40 shadow-2xl transform transition-all duration-300",
+          "fixed p-5 rounded-sm right-0 top-0 w-[190px] sm:w-[200px] h-screen bg-[#7A4A43] z-40 shadow-2xl transform transition-all duration-300",
           {
             "translate-x-full": !isSideMenuOpen,
             "translate-x-0": isSideMenuOpen,
@@ -50,8 +50,8 @@ export default function Sidebar() {
       >
         <div className=" ">
           <GoReply
-            size={25}
-            className="text-white absolute top-6 right-6 cursor-pointer"
+            size={27}
+            className="text-white absolute shadow p-1 top-5 right-5 cursor-pointer"
             onClick={() => closeSideMenu()}
           />
         </div>
@@ -60,26 +60,26 @@ export default function Sidebar() {
 
             <Show when="signed-out">
               <SignInButton mode="modal">
-                <button type="button" className="flex items-center ml-1 text-white">
-                  <GoPerson size={24} />
-                  <span className="ml-2">Ingresar</span>
+                <button type="button" className="flex items-center ml-2 text-white">
+                  <GoPerson size={22} />
+                  <span className="ml-2 text-[15px]">Ingresar</span>
                 </button>
               </SignInButton>
             </Show>
             <Show when="signed-in">
-              <div className="flex items-center ml-1 text-white">
+              <div className="flex items-center ml-2 text-white">
                 <UserButton />
-                <span className="ml-2">Perfil</span>
+                <span className="ml-2 text-[15px]">Perfil</span>
               </div>
             </Show>
 
           <div>
             <nav
               onClick={() => setOpenCategories((prev) => !prev)}
-              className="flex text-white transition-colors items-center ml-1 transition-colors duration-200 active:scale-98 "
+              className="flex text-white transition-colors items-center ml-2 transition-colors duration-200 active:scale-98 "
             >
-              <GoTag className="" size={24} />
-              <span className="ml-2">Categorias</span>
+              <GoTag className="" size={22} />
+              <span className="shadow-xl px-1 pb-1 ml-1 text-[15px]">Categorias</span>
             </nav>
             <nav className="">
               {openCategories && (
@@ -91,7 +91,7 @@ export default function Sidebar() {
                       className="flex items-center p-1 text-decoration-none hover rounded transition-all"
                       onClick={closeSideMenu}
                     >
-                      <span className="px-1 ml-2 text-sm shadow-sm rounded-sm text-gray-300">
+                      <span className="px-1 ml-8 text-[13px] shadow-sm rounded-sm text-gray-300">
                         {cat.label}
                       </span>
                     </Link>
@@ -103,24 +103,24 @@ export default function Sidebar() {
 
           <Link
             href={"/liked"}
-            className="flex text-white transition-colors items-center ml-1"
+            className="flex text-white transition-colors items-center ml-2"
           >
-            <GoHeart size={24} />
-            <span className="ml-2">Favoritos</span>
+            <GoHeart size={22} />
+            <span className="ml-2 text-[15px]">Favoritos</span>
           </Link>
           <Link
             href={"/"}
-            className="flex text-white transition-colors items-center ml-1"
+            className="flex text-white transition-colors items-center ml-2"
           >
-            <GoMegaphone className="" size={24} />
-            <span className="ml-2">Novedades</span>
+            <GoMegaphone className="" size={22} />
+            <span className="ml-2 text-[15px]">Novedades</span>
           </Link>
           <Link
             href={"/"}
-            className="flex text-white transition-colors items-center ml-1"
+            className="flex text-white transition-colors items-center ml-2"
           >
-            <GoInfo className="" size={24} />
-            <span className="ml-2">Sobre nosotros</span>
+            <GoInfo className="" size={22} />
+            <span className="ml-2 text-[15px]">Sobre nosotros</span>
           </Link>
 
           {/* links */}

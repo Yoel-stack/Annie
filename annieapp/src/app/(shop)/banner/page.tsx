@@ -1,12 +1,19 @@
-import { ArticlesGrid, Title } from '@/src/components'
-import { initialData } from '@/src/seed'
+import { ArticlesGrid, Title, transformArticle } from '@/src/components'
+import { prisma } from '@/src/lib/prisma'
 import React from 'react'
 
 
-const articles = initialData.articles
+export default async function newArticles () {
 
+  const newArt = await prisma.article.findMany({
+    orderBy: {
+      createdAt: 'desc'
+    },
+    take: 5
+  });
 
-export default function newArticles () {
+  const articles = newArt.map(transformArticle);
+
   return (
     <div className="mt-8">
       <nav className="flex justify-center uppercase text-sm sm:text-base font-bold text-[#7A4A43]">
@@ -18,3 +25,4 @@ export default function newArticles () {
     </div>
   )
 };
+

@@ -56,14 +56,14 @@ export const TopMenu = () => {
               </span>
             </div>
 
-            <div className = "mt-2">
+            <div className = "mb-3 md:mt-2 md:mb-1">
               <Link href={"/"}>
                 <Image
                   src="/annieTransparent.webp"
                   width={150}
                   height={100}
                   alt="Annie Logo"
-                  className="object-contain w-[110px] md:w-[120px]"
+                  className="object-contain w-[110px] md:w-[150px]"
                 />
               </Link>
             </div>

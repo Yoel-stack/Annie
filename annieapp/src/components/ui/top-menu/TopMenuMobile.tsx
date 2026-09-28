@@ -10,7 +10,7 @@ export const TopMenuMobile = () => {
   
   return (
     <div className="md:hidden">
-      <nav className="fixed top-14 right-6 z-30 flex gap-1">
+      <nav className="fixed top-13 right-6 z-30 flex gap-1">
         <button className="cursor-pointer" onClick={abrirMenu}>
           <GoListUnordered size={33} className="mx-1 text-white" />
         </button>
