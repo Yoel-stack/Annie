@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { IoTrashBinOutline } from "react-icons/io5";
 import { useUser } from "@clerk/nextjs";
+import { getFavoritesFromDB, removeFavoriteFromDB } from '@/src/actions/FavoriteActions';
 
 
 interface Article {
@@ -17,24 +18,28 @@ interface Article {
 
 
 export default function LikedArticles() {
-  
+
+
   const { isLoaded, isSignedIn } = useUser();
   const [favorites, setFavorites] = useState<Article[]>([]);
   const [isLoadingLocal, setIsLoadingLocal] = useState(true);
 
   useEffect(() => {
-    if (isLoaded && isSignedIn) {
-      const savedData = localStorage.getItem("annie-likes");
-      if (savedData) {
+    async function loadFavorites() {
+      if (isLoaded && isSignedIn) {
         try {
-          const parsedData: Article[] = JSON.parse(savedData);
-          setFavorites(parsedData);
+          const savedData = await getFavoritesFromDB(); //devuelve datos listos, arreglo de articulo con sus respectivos campos
+          const articles = savedData.map((item) => item.article); // Extrae solo la información del artículo
+          setFavorites(articles);
         } catch (error) {
-          console.error("Error al parsear los favoritos de Annie:", error);
+          console.error("Error al parsear los favoritos de Annie", error);
+        } finally {
+          setIsLoadingLocal(false);
         }
       }
-      setIsLoadingLocal(false); 
+
     }
+    loadFavorites();
   }, [isLoaded, isSignedIn]);
 
   // Mientras Clerk verifica si hay un usuario, mostramos un estado de carga
@@ -44,7 +49,7 @@ export default function LikedArticles() {
         Cargando favoritos...
       </div>
     );
-  };
+  }
 
   if (!isSignedIn) {
     return (
@@ -53,12 +58,16 @@ export default function LikedArticles() {
         para ver tus favoritos
       </div>
     );
-  };
+  }
 
-  const handleDelete = (slug: string) => {
+  const handleDelete = async(slug: string) => {
+    try {
+      await removeFavoriteFromDB(slug); // Llama a la función para eliminar del servidor
       const updatedFavorites = favorites.filter((item) => item.slug !== slug);
       setFavorites(updatedFavorites);
-      localStorage.setItem("annie-likes", JSON.stringify(updatedFavorites));
+    } catch (error) {
+      console.error("Error al eliminar el artículo de favoritos", error);
+    }
   };
 
   if (favorites.length === 0) {
@@ -67,7 +76,7 @@ export default function LikedArticles() {
         Aún no tienes artículos guardados en tu lista
       </div>
     );
-  };
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-2">

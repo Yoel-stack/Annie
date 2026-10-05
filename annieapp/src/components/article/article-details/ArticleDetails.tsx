@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { SwiperS } from '@/src/components/article/SwiperSlide';
 import { Article } from '@/src/interfaces';
 import { RedirectToSignIn, useClerk, useUser } from "@clerk/nextjs";
+import { checkIsFavorite, toggleFavoriteAction } from '@/src/actions/ToggleFavoriteAction';
 
 
 interface Props { 
@@ -22,46 +23,41 @@ export default function ArticleDetails({ article }: Props) {
   const [toast, setToast] = useState({ mensaje: "", visible: false })
   
   useEffect(() => {
-    // Solo leemos el localStorage si Clerk ya cargó y el usuario está logueado
-    if (isLoaded && isSignedIn) {
-      const saveData = localStorage.getItem("annie-likes");
-      if (saveData) {
+    async function checkFavoriteStatus() {
+      if (isLoaded && isSignedIn) {
         try {
-          const favorites: Article[] = JSON.parse(saveData);
-          const existe = favorites.some((item) => item.slug === article.slug);
-          setIsLiked(existe);
+          const status = await checkIsFavorite(article.slug);
+          setIsLiked(status);
         } catch (error) {
-          console.error("Error al leer favoritos:", error);
+          console.error("Error al verificar estado de favorito:", error);
         }
+      } else {
+        setIsLiked(false);
       }
-    } else {
-      // Si el usuario cierra sesión, nos aseguramos de resetear el estado visual del botón
-      setIsLiked(false);
     }
+    checkFavoriteStatus();
   }, [article.slug, isLoaded, isSignedIn]);
 
-  const handleLike = () => {
+  const handleLike = async () => {
     if (!isSignedIn) {
       openSignIn();
       return;
     }
 
-    // Si llegó aquí, significa que SÍ está logueado
-    const newState = !isLiked;
-    setIsLiked(newState);
-
-    const savedData = localStorage.getItem("annie-likes");
-    let favorites: Article[] = savedData ? JSON.parse(savedData) : [];
-
-    if (newState === true) {
-      favorites.push(article);
+    try {
+    const response = await toggleFavoriteAction(article.slug);
+    
+    if (response.status === "added") {
+      setIsLiked(true);
       triggerToast("Añadido a tus favoritos");
     } else {
-      favorites = favorites.filter((item) => item.slug !== article.slug);
+      setIsLiked(false);
       triggerToast("Quitado de favoritos");
     }
-    localStorage.setItem("annie-likes", JSON.stringify(favorites));
-  };
+  } catch (error) {
+    console.error("Error al actualizar favorito en la base de datos:", error);
+  }
+};
 
   if (shouldRedirect) {
     return <RedirectToSignIn />;

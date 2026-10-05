@@ -67,7 +67,7 @@ export default function Sidebar() {
               </SignInButton>
             </Show>
             <Show when="signed-in">
-              <div className="flex items-center ml-2 text-white">
+              <div className="flex items-center ml-1 text-white">
                 <UserButton />
                 <span className="ml-2 text-[15px]">Perfil</span>
               </div>
