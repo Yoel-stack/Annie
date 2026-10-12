@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function FixedWpp() {
 
-    const phoneNumber = "Minumero"; 
+    const phoneNumber = "Minumeroo"; 
     const message = encodeURIComponent("¡Hola Annie! Quería consultar por los productos personalizados.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
