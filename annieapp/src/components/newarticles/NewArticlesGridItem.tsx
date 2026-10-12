@@ -10,10 +10,9 @@ interface Props {
 
 
 export const NewArticlesGridItem = ({ article }: Props) => {
+  const artImage = article.images;
 
-    const artImage = article.images;
-
-    return (
+  return (
     <div className="flex flex-col items-center mb-3 p-2 w-full max-w-[340px] md:max-w-none mx-auto">
       <Link
         className="flex justify-center w-full"
@@ -50,9 +49,11 @@ export const NewArticlesGridItem = ({ article }: Props) => {
             {`$${article.price}`}
           </span>
 
-          <button className="p-1 sm:p-1 mx-1 sm:mr-4 px-1 sm:px-2.5 bg-[#FCC6BB] text-[#7A4A43] text-[9px] sm:text-xs 
+          <button
+            className="p-1 sm:p-1 mx-1 sm:mr-4 px-1 sm:px-2.5 bg-[#FCC6BB] text-[#7A4A43] text-[9px] sm:text-xs 
           font-bold uppercase tracking-wider cursor-pointer rounded-[8px] hover:bg-[#FAA08E] hover:text-white transition-all 
-          duration-300 shadow-sm hover:shadow-md whitespace-nowrap">
+          duration-300 shadow-sm hover:shadow-md whitespace-nowrap"
+          >
             Ver detalles
           </button>
         </Link>

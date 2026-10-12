@@ -30,7 +30,7 @@ async function ensureUserExists() {
   }
 
   return dbUser;
-}
+};
 
 // 2. Verificar si un artículo es favorito
 export async function checkIsFavorite(slug: string) {
@@ -51,7 +51,7 @@ export async function checkIsFavorite(slug: string) {
   });
 
   return !!favorite;
-}
+};
 
 // 3. Alternar favorito (añadir o quitar)
 export async function toggleFavoriteAction(slug: string) {
@@ -88,4 +88,4 @@ export async function toggleFavoriteAction(slug: string) {
     });
     return { status: "added" };
   }
-}
+};

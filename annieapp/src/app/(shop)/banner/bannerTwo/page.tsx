@@ -4,8 +4,6 @@ import { prisma } from '@/src/lib/prisma'
 import React from 'react'
 
 
-
-
 export default async function selectArticles () {
 
   const selectArt = await prisma.article.findMany({

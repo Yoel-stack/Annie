@@ -11,9 +11,8 @@ interface Props {
 
 
 export default async function ArticlePage({ params }: Props) {
-const { slug } = await params; // Esperamos a que la Promesa se resuelva para obtener el slug
-
-  // const article = initialData.articles.find((p) => p.slug === slug);
+  
+  const { slug } = await params; // Esperamos a que la Promesa se resuelva para obtener el slug
 
   const rawarticle = await prisma.article.findUnique({
     where: { slug },

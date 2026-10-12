@@ -5,37 +5,34 @@ import { prisma } from "@/src/lib/prisma";
 
 
 export async function ensureUserExists() {
-  const { userId } = await auth();
+    const { userId } = await auth();
 
-  if (!userId) {
-    throw new Error("No hay un usuario autenticado en Clerk.");
-  }
+    if (!userId) {
+        throw new Error("No hay un usuario autenticado en Clerk.");
+    }
 
-  // 1. Buscamos si ya existe el usuario en tu tabla User de Prisma
-  let dbUser = await prisma.user.findUnique({
-    where: { clerkId: userId },
-  });
-
-  // 2. Si no existe, lo creamos automáticamente trayendo los datos de Clerk
-  if (!dbUser) {
-    const userClerk = await currentUser();
-    const emailUser = userClerk?.emailAddresses[0]?.emailAddress || "sin-email@correo.com";
-    const nameUser = userClerk?.firstName || "Usuario";
-
-    dbUser = await prisma.user.create({
-      data: {
-        clerkId: userId,
-        email: emailUser,
-        name: nameUser,
-      },
+    // 1. Buscamos si ya existe el usuario en tu tabla User de Prisma
+    let dbUser = await prisma.user.findUnique({
+        where: { clerkId: userId },
     });
-    console.log("¡Nuevo usuario creado en Neon con éxito!", dbUser);
-  } else {
-    console.log("El usuario ya existía en la base de datos:", dbUser.clerkId);
-  }
 
-  return dbUser;
-}
+    // 2. Si no existe, lo creamos automáticamente trayendo los datos de Clerk
+    if (!dbUser) {
+        const userClerk = await currentUser();
+        const emailUser = userClerk?.emailAddresses[0]?.emailAddress || "sin-email@correo.com";
+        const nameUser = userClerk?.firstName || "Usuario";
+
+        dbUser = await prisma.user.create({
+            data: {
+                clerkId: userId,
+                email: emailUser,
+                name: nameUser,
+            },
+        });
+    }
+
+    return dbUser;
+};
 
 // 2. Obtenemos los favoritos del usuario desde la base de datos
 export async function getFavoritesFromDB() {
@@ -50,7 +47,7 @@ export async function getFavoritesFromDB() {
   const favorites = await prisma.favorite.findMany({
     where: { userId: userId },
     include: {
-      article: true, // Trae toda la info completa del artículo
+      article: true, // Info completa del artículo
     },
   });
 

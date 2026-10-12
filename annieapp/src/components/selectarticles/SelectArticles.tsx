@@ -18,4 +18,4 @@ export const SelectArticles = ({ articles }:Props) => {
       ))}
     </div>
   );
-}
+};

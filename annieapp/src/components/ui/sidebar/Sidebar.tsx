@@ -88,10 +88,10 @@ export default function Sidebar() {
                     <Link
                       key={cat.href}
                       href={cat.href}
-                      className="flex items-center p-1 text-decoration-none hover rounded transition-all"
+                      className="flex items-center mx-1 mt-1.5 text-decoration-none hover rounded transition-all"
                       onClick={closeSideMenu}
                     >
-                      <span className="px-1 ml-8 text-[13px] shadow-sm rounded-sm text-gray-300">
+                      <span className="px-1 ml-8 text-[12px] shadow-sm rounded-sm text-gray-300">
                         {cat.label}
                       </span>
                     </Link>
@@ -122,8 +122,13 @@ export default function Sidebar() {
             <GoInfo className="" size={22} />
             <span className="ml-2 text-[15px]">Sobre nosotros</span>
           </Link>
+          
+          <div className="flex flex-col">
 
-          {/* links */}
+          <span className="text-center mt-[33vh] text-white/90 text-sm font-light">2026</span>
+          <span className="text-center text-white/60 text-[10px] sm:text-[13px] ">Uruguay</span>
+          </div>
+
         </div>
       </nav>
     </div>

@@ -13,6 +13,8 @@ export * from './clerk/ClerkAppearance';
 
 export * from './searchbar/SearchBar';
 
+export * from './socialNet/FixedWpp';
+
 export * from './ui/advertising/AdvertisingBar';
 export * from './ui/title/Title';
 export * from './ui/banners/Banners';
