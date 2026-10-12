@@ -57,21 +57,23 @@ export default function Sidebar() {
         </div>
 
         <div className="mt-14 flex flex-col gap-5">
-
-            <Show when="signed-out">
-              <SignInButton mode="modal">
-                <button type="button" className="flex items-center ml-2 text-white">
-                  <GoPerson size={22} />
-                  <span className="ml-2 text-[15px]">Ingresar</span>
-                </button>
-              </SignInButton>
-            </Show>
-            <Show when="signed-in">
-              <div className="flex items-center ml-1 text-white">
-                <UserButton />
-                <span className="ml-2 text-[15px]">Perfil</span>
-              </div>
-            </Show>
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <button
+                type="button"
+                className="flex items-center ml-2 text-white"
+              >
+                <GoPerson size={22} />
+                <span className="ml-2 text-[15px]">Ingresar</span>
+              </button>
+            </SignInButton>
+          </Show>
+          <Show when="signed-in">
+            <div className="flex items-center ml-1 text-white">
+              <UserButton />
+              <span className="ml-2 text-[15px]">Perfil</span>
+            </div>
+          </Show>
 
           <div>
             <nav
@@ -79,9 +81,11 @@ export default function Sidebar() {
               className="flex text-white transition-colors items-center ml-2 transition-colors duration-200 active:scale-98 "
             >
               <GoTag className="" size={22} />
-              <span className="shadow-xl px-1 pb-1 ml-1 text-[15px]">Categorias</span>
+              <span className="shadow-xl px-1 pb-1 ml-1 text-[15px]">
+                Categorias
+              </span>
             </nav>
-            <nav className="">
+            <nav>
               {openCategories && (
                 <div className="mt-3">
                   {categories.map((cat) => (
@@ -89,7 +93,7 @@ export default function Sidebar() {
                       key={cat.href}
                       href={cat.href}
                       className="flex items-center mx-1 mt-1.5 text-decoration-none hover rounded transition-all"
-                      onClick={closeSideMenu}
+                      onClick={() => closeSideMenu()}
                     >
                       <span className="px-1 ml-8 text-[12px] shadow-sm rounded-sm text-gray-300">
                         {cat.label}
@@ -104,31 +108,36 @@ export default function Sidebar() {
           <Link
             href={"/liked"}
             className="flex text-white transition-colors items-center ml-2"
+            onClick={() => closeSideMenu()}
           >
             <GoHeart size={22} />
             <span className="ml-2 text-[15px]">Favoritos</span>
           </Link>
           <Link
-            href={"/"}
+            href={"/new"}
             className="flex text-white transition-colors items-center ml-2"
+            onClick={() => closeSideMenu()}
           >
             <GoMegaphone className="" size={22} />
             <span className="ml-2 text-[15px]">Novedades</span>
           </Link>
           <Link
-            href={"/"}
+            href={"/aboutUs"}
             className="flex text-white transition-colors items-center ml-2"
+            onClick={() => closeSideMenu()}
           >
-            <GoInfo className="" size={22} />
+            <GoInfo className="/aboutUs" size={22} />
             <span className="ml-2 text-[15px]">Sobre nosotros</span>
           </Link>
-          
+
           <div className="flex flex-col">
-
-          <span className="text-center mt-[33vh] text-white/90 text-sm font-light">2026</span>
-          <span className="text-center text-white/60 text-[10px] sm:text-[13px] ">Uruguay</span>
+            <span className="text-center mt-[33vh] text-white/90 text-sm font-light">
+              2026
+            </span>
+            <span className="text-center text-white/60 text-[10px] sm:text-[13px] ">
+              Uruguay
+            </span>
           </div>
-
         </div>
       </nav>
     </div>
