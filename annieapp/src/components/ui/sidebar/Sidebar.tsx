@@ -51,7 +51,7 @@ export default function Sidebar() {
         <div className=" ">
           <GoReply
             size={27}
-            className="text-white absolute shadow p-1 top-5 right-5 cursor-pointer"
+            className="text-white rounded-[8px] absolute shadow p-1 top-5 right-5 cursor-pointer"
             onClick={() => closeSideMenu()}
           />
         </div>
@@ -130,14 +130,14 @@ export default function Sidebar() {
             <span className="ml-2 text-[15px]">Sobre nosotros</span>
           </Link>
 
-          <div className="flex flex-col">
-            <span className="text-center mt-[33vh] text-white/90 text-sm font-light">
+          {/* <div className="flex flex-col">
+            <span className="text-center mt-[40vh] text-white/90 text-sm font-light">
               2026
             </span>
             <span className="text-center text-white/60 text-[10px] sm:text-[13px] ">
               Uruguay
             </span>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

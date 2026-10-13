@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
-import { GoChevronLeft, GoChevronRight, GoHeart, GoPerson } from "react-icons/go";
+import { GoChevronLeft, GoChevronRight, GoHeart, GoInfo, GoMegaphone, GoPerson } from "react-icons/go";
 import { ClerkProvider, Show, SignInButton, UserButton } from '@clerk/nextjs'
 import { TopMenuMobile } from "./TopMenuMobile";
 import { usePathname } from "next/navigation";
@@ -100,7 +100,7 @@ export const TopMenu = () => {
                     aria-current={isActive ? "page" : undefined}
                   >
                     <div
-                      className="py-2.5 px-7.5 bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
+                      className="py-2.5 px-[25px] bg-backgroundTree text-sm leading-none rounded-t-xl transition-all duration-300 ease-out 
                     shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                     group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                     focus:ring-offset-2"
@@ -112,15 +112,39 @@ export const TopMenu = () => {
               })}
 
               <div className="sticky right-0 z-10 flex items-end flex-shrink-0 gap-0.5 pl-1 bg-foreground">
-                <Link href={"/liked"}>
+                <Link href={"/aboutUs"}>
                   <div className="group relative">
                     <div
-                      className="cursor-pointer px-4 p-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
+                      className="cursor-pointer py-2.5 px-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
                   ease-out shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
                   group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                   focus:ring-offset-2"
                     >
-                      <GoHeart size={20} />
+                      <GoInfo size={18} />
+                    </div>
+                  </div>
+                </Link>
+                <Link href={"/new"}>
+                  <div className="group relative">
+                    <div
+                      className="cursor-pointer py-2.5 px-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
+                  ease-out shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
+                  group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
+                  focus:ring-offset-2"
+                    >
+                      <GoMegaphone size={18} />
+                    </div>
+                  </div>
+                </Link>
+                <Link href={"/liked"}>
+                  <div className="group relative ">
+                    <div
+                      className="cursor-pointer py-2.5 px-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
+                  ease-out shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.2),0_2px_4px_rgba(0,0,0,0.05)] group-hover:translate-y-[-5px] group-hover:bg-backgroundTwo 
+                  group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
+                  focus:ring-offset-2"
+                    >
+                      <GoHeart size={18} />
                     </div>
                   </div>
                 </Link>
