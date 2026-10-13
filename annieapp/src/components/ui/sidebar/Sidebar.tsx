@@ -20,7 +20,7 @@ export default function Sidebar() {
     { label: "Planners", href: "/category/planners" },
     { label: "Cuadernos", href: "/category/cuadernos" },
     { label: "Varios", href: "/category/varios" },
-    { label: "Libretitas", href: "/category/libretitas" },
+    { label: "Libretas", href: "/category/libretas" },
     { label: "Encuadernaciones", href: "/category/encuadernaciones" },
     { label: "Programas de EBI", href: "/category/programasEBI" },
     { label: "Otros", href: "/category/otros" },

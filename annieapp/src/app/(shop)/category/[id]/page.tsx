@@ -28,7 +28,7 @@ export default async function catergoryPage({params}: Props){
         varios: "variedad de articulos",
         otros: "otros",
         programasEBI: "programas de EBI",
-        libretitas: "libretitas",
+        libretas: "libretas",
     } 
     return (
       <>

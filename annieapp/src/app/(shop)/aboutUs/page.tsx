@@ -6,7 +6,7 @@ export default function aboutUs() {
     <div className="flex flex-col lg:flex-row items-center sm:pt-2 ml-5 sm:ml-0 mr-6 text-center lg:text-left text-sm sm:text-[16px] tracking-wide font-light">
   <div className="flex p-3 pt-5 sm:p-10 text-[#7A4A43] flex-col cols-2">
 
-  <p className="text-[20px] sm:text-[24px] font-normal">Hola, soy Cintia ♡</p>
+  <p className="text-[20px] sm:text-[24px] font-normal">Hola, soy Annie ♡</p>
 
   <p className="pt-2">
     Detrás de <strong>Papelería Creativa Annie</strong> estoy yo, Cintia, una persona que disfruta muchísimo crear, imaginar y transformar pequeñas ideas en cosas que puedan acompañar momentos especiales.
@@ -45,3 +45,5 @@ export default function aboutUs() {
 </div>
   )
 };
+
+

@@ -14,7 +14,7 @@ export default function Footer () {
           <p className="text-white/80 mx-1 sm:mx-2 text-[8px] sm:text-[10px] uppercase tracking-[0.2em] mt-1">
             Papelería Creativa
           </p>
-        <div className="gap-2 mb-3 mt-0.5 sm:mt-1">
+        <div className="gap-2 mb-3 sm:mb-0 mt-0.5 sm:mt-1">
           <Link
             href="https://instagram.com/TU_USUARIO"
             target="_blank"
@@ -37,3 +37,5 @@ export default function Footer () {
     </footer>
   );
 };
+
+

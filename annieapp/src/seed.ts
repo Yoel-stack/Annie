@@ -10,7 +10,7 @@ interface SeedArticles {
 };
 
 
-type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios'|'otros'|'programasEBI'|'libretitas';
+type ValidCatergories = 'agendas'|'cuadernos'|'planners'|'encuadernaciones'|'varios'|'otros'|'programasEBI'|'libretas';
 type ValidTypes = 'utiles escolares'|'sin personalizar'|'agendas personalizadas'|'cuadernos personalizados'|'planners personalizados'|'encuadernaciones personalizadas'; 
 
 interface SeedData {
