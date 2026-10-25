@@ -8,7 +8,7 @@ export async function ensureUserExists() {
     const { userId } = await auth();
 
     if (!userId) {
-        throw new Error("No hay un usuario autenticado en Clerk.");
+        throw new Error("No hay un usuario autenticado en Clerk");
     }
 
     // 1. Buscamos si ya existe el usuario en tu tabla User de Prisma

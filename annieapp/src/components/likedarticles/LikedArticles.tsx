@@ -54,19 +54,26 @@ export default function LikedArticles() {
   if (!isSignedIn) {
     return (
       <div className="py-20 text-sm sm:text-[17px] text-center text-[#8C7E74]">
-        Por favor, inicia sesión haciendo clic en ingrsar arriba
-        para ver tus favoritos
+        Por favor, inicia sesión haciendo clic en ingresar para ver tus favoritos
       </div>
     );
   }
 
-  const handleDelete = async(slug: string) => {
+  const handleDelete = async (slug: string) => {
+    // Guardamos una copia de respaldo por si ocurre un error
+    const previousFavorites = [...favorites];
+
+    // Actualizamos el estado local para que desaparezca al instante
+    setFavorites((prevFavorites) => prevFavorites.filter((item) => item.slug !== slug));
+
     try {
-      await removeFavoriteFromDB(slug); // Llama a la función para eliminar del servidor
-      const updatedFavorites = favorites.filter((item) => item.slug !== slug);
-      setFavorites(updatedFavorites);
+      // Ejecutamos la petición al servidor en segundo plano
+      await removeFavoriteFromDB(slug);
     } catch (error) {
+      // Si algo falla, revertimos el estado al que teníamos y mostramos el error
       console.error("Error al eliminar el artículo de favoritos", error);
+      setFavorites(previousFavorites);
+      // Opcional: toast.error("No se pudo eliminar de favoritos");
     }
   };
 
