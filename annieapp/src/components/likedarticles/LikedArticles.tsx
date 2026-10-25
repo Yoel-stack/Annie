@@ -54,7 +54,7 @@ export default function LikedArticles() {
   if (!isSignedIn) {
     return (
       <div className="py-20 text-sm sm:text-[17px] text-center text-[#8C7E74]">
-        Por favor, inicia sesión haciendo clic en el icono de usuario arriba
+        Por favor, inicia sesión haciendo clic en ingrsar arriba
         para ver tus favoritos
       </div>
     );

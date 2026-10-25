@@ -44,20 +44,31 @@ export default function ArticleDetails({ article }: Props) {
       return;
     }
 
-    try {
-    const response = await toggleFavoriteAction(article.slug);
-    
-    if (response.status === "added") {
-      setIsLiked(true);
-      triggerToast("Añadido a tus favoritos");
-    } else {
-      setIsLiked(false);
-      triggerToast("Quitado de favoritos");
+    // Guardamos el estado actual por si necesitamos revertirlo
+    const previousState = isLiked;
+    const nextState = !previousState;
+
+    // Cambiamos la UI y mostramos el toast al instante 0ms
+    setIsLiked(nextState);
+    triggerToast(nextState ? "Añadido a tus favoritos" : "Quitado de favoritos");
+
+  try {
+      // Ejecutamos la Server Action en segundo plano
+      const response = await toggleFavoriteAction(article.slug);
+      
+      // Sincronizamos con la respuesta real del servidor por seguridad
+      if (response.status === "added") {
+        setIsLiked(true);
+      } else {
+        setIsLiked(false);
+      }
+    } catch (error) {
+      // Si hay un error de red o servidor, REVERTIMOS el cambio visual
+      console.error("Error al actualizar favorito en la base de datos:", error);
+      setIsLiked(previousState);
+      triggerToast("No se pudo actualizar favoritos");
     }
-  } catch (error) {
-    console.error("Error al actualizar favorito en la base de datos:", error);
-  }
-};
+  };
 
   if (shouldRedirect) {
     return <RedirectToSignIn />;
