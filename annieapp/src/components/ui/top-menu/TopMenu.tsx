@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
-import { GoChevronLeft, GoChevronRight, GoHeart, GoInfo, GoMegaphone, GoPerson } from "react-icons/go";
+import { GoChevronLeft, GoChevronRight, GoCommentDiscussion, GoHeart, GoInfo, GoMegaphone, GoPerson } from "react-icons/go";
 import { ClerkProvider, Show, SignInButton, UserButton } from '@clerk/nextjs'
 import { TopMenuMobile } from "./TopMenuMobile";
 import { usePathname } from "next/navigation";
@@ -124,7 +124,7 @@ export const TopMenu = () => {
                     </div>
                   </div>
                 </Link>
-                <Link href={"/new"}>
+                <Link href={"/screenshots"}>
                   <div className="group relative">
                     <div
                       className="cursor-pointer py-2.5 px-3 bg-backgroundTree text-[#F07C65] rounded-t-xl transition-all duration-300 
@@ -132,7 +132,7 @@ export const TopMenu = () => {
                   group-hover:shadow-[inset_0_-4px_0_0_rgba(250,160,142,0.4),0_8px_15px_-3px_rgba(74,69,64,0.15)] focus:outline-none focus:ring-2 focus:ring-[#4A4540]/30 
                   focus:ring-offset-2"
                     >
-                      <GoMegaphone size={18} />
+                      <GoCommentDiscussion size={18} />
                     </div>
                   </div>
                 </Link>

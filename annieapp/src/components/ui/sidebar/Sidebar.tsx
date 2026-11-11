@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useUIStore } from '@/src/store'
-import { GoHeart, GoInfo, GoMegaphone, GoPerson, GoReply, GoTag } from 'react-icons/go';
+import { GoCommentDiscussion, GoHeart, GoInfo, GoMegaphone, GoPerson, GoReply, GoTag } from 'react-icons/go';
 import clsx from "clsx";
 import Link from 'next/link';
 import { Show, SignInButton, UserButton } from '@clerk/nextjs';
@@ -114,12 +114,12 @@ export default function Sidebar() {
             <span className="ml-2 text-[15px]">Favoritos</span>
           </Link>
           <Link
-            href={"/new"}
+            href={"/screenshots"}
             className="flex text-white transition-colors items-center ml-2"
             onClick={() => closeSideMenu()}
           >
-            <GoMegaphone className="" size={22} />
-            <span className="ml-2 text-[15px]">Novedades</span>
+            <GoCommentDiscussion className="" size={22} />
+            <span className="ml-2 text-[15px]">Clientes</span>
           </Link>
           <Link
             href={"/aboutUs"}
