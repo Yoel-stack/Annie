@@ -1,14 +1,15 @@
 import Image from "next/image";
 
 const customerScreenshots = [
-  { id: 1, src: "/screen/captura1.jpeg", alt: "Captura cliente contento 1" },
-  { id: 2, src: "/screen/captura2.jpeg", alt: "Captura cliente contento 2" },
-  { id: 3, src: "/screen/captura3.jpeg", alt: "Captura cliente contento 3" },
-  { id: 4, src: "/screen/captura4.jpeg", alt: "Captura cliente contento 4" },
-  { id: 5, src: "/screen/captura5.jpeg", alt: "Captura cliente contento 5" },
-  { id: 6, src: "/screen/captura6.jpeg", alt: "Captura cliente contento 6" },
-  { id: 7, src: "/screen/captura7.jpeg", alt: "Captura cliente contento 7" },
-];
+  { id: 1, src: "/screen/captura1.jpeg", alt: "Captura cliente 1" },
+  { id: 2, src: "/screen/captura2.jpeg", alt: "Captura cliente 2" },
+  { id: 3, src: "/screen/captura3.jpeg", alt: "Captura cliente 3" },
+  { id: 4, src: "/screen/captura4.jpeg", alt: "Captura cliente 4" },
+  { id: 5, src: "/screen/captura5.jpeg", alt: "Captura cliente 5" },
+  { id: 6, src: "/screen/captura6.jpeg", alt: "Captura cliente 6" },
+  { id: 7, src: "/screen/captura7.jpeg", alt: "Captura cliente 7" },
+  { id: 8, src: "/screen/captura8.jpeg", alt: "Captura cliente 8" },
+]
 
 export default function Screenshots() {
   return (
